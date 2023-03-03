@@ -1,0 +1,38 @@
+<!-- <form [formGroup]="loginForm" (ngSubmit)="login">
+    <label>e-mail:<input formControlName="login"></label>
+    <label>hasło:<input formControlName="password"></label>
+    <button type="button">Zaloguj</button>
+</form> -->
+
+<div class="container">
+  <div class="login-view-container">
+    <h1>Zaloguj</h1>
+    <form [formGroup]="form" class="form" (ngSubmit)="proceedLogin()">
+      <mat-form-field appearance="fill">
+        <mat-label>Podaj e-mail</mat-label>
+        <input
+          type="email"
+          matInput
+          placeholder="zaloguj@gmail.com"
+          formControlName="email"
+        />
+        <mat-error *ngIf="emailCtrl.invalid">{{
+          getEmailErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Podaj hasło</mat-label>
+        <input
+          type="password"
+          matInput
+          placeholder="Hasło"
+          formControlName="password"
+        />
+        <mat-error *ngIf="emailCtrl.invalid">{{
+          "Wpisz haslo jeszcze raz"
+        }}</mat-error>
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary">Zaloguj</button>
+    </form>
+  </div>
+</div>

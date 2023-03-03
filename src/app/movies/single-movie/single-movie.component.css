@@ -1,0 +1,132 @@
+.movie-wrapper {
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  min-height: 450px;
+}
+
+.movie-image-wrapper {
+  flex-basis: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.7);
+}
+
+.movie-image-poster {
+  position: absolute;
+  -webkit-animation: shadowPoster 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: shadowPoster 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.movie-image-poster-img {
+  width: 100%;
+}
+
+@-webkit-keyframes shadowPoster {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translateZ(50px);
+    transform: translateZ(50px);
+    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+  }
+}
+
+@keyframes shadowPoster {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translateZ(50px);
+    transform: translateZ(50px);
+    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+  }
+}
+
+.movie-info {
+  flex-basis: 50%;
+  padding: 2.5%;
+  font-size: 1.6rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transform: translateY(-50px);
+}
+
+.movie-info-about {
+  font-size: 1.6rem;
+
+  padding: 30px 0;
+}
+
+.movie-info-description {
+  line-height: 2;
+  min-height: 100px;
+  display: flex;
+  justify-content: left;
+}
+
+.movie-info-description-show {
+  margin: 20px;
+  text-align: right;
+  cursor: pointer;
+  text-decoration: underline;
+  transform: translateY(-50px);
+}
+
+.movie-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 25%;
+  font-size: 3.6rem;
+  font-weight: bold;
+}
+
+.rate-btns {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25%;
+}
+
+.hoursOfSeans {
+  width: 75%;
+  transform: translateY(-50px);
+}
+
+.hourOfSeans {
+  width: 100%;
+}
+.rate-btn {
+  margin: 5px 0;
+  background-color: #fff;
+  padding: 5px 25px;
+}
+.premiereInfo {
+  position: absolute;
+  color: red;
+  letter-spacing: 2px;
+  font-size: 26px;
+  width: 100%;
+  font-weight: bold;
+  text-align: right;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  border: 1px solid red;
+  width: fit-content;
+  background-color: rgb(4, 28, 50);
+  border-radius: 5px;
+}

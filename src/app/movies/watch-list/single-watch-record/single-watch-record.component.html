@@ -1,0 +1,34 @@
+<ng-container>
+  <mat-card class="single-watch-record-class">
+    <mat-card-header>
+      <mat-card-title class="title">{{ showRecord.title }}</mat-card-title>
+      <mat-card-subtitle class="genre">{{
+        showRecord.genre
+      }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div (click)="selectVideo(showRecord)" class="video-wrapper">
+        <youtube-player
+          [height]="325"
+          [width]="700"
+          [videoId]="showRecord.videoId"
+        ></youtube-player>
+      </div>
+      <p class="description">{{ showRecord.descriptionShort }}</p>
+      <div class="details">
+        <p>
+          Duration:
+          {{ showRecord.runTime }} minutes
+        </p>
+        <p>Age category: {{ showRecord.pg }}</p>
+        <p>Cast: {{ showRecord.cast }}</p>
+      </div>
+
+      <mat-card-footer class="footer">
+        <button class="btn" mat-stroked-button (click)="remove(showRecord.id)">
+          Usuń z sekcji Chcę obejrzeć
+        </button></mat-card-footer
+      >
+    </mat-card-content>
+  </mat-card>
+</ng-container>

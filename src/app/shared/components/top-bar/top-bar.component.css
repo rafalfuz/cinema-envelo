@@ -1,0 +1,22 @@
+.top-bar {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: right;
+}
+
+.top-bar--title {
+  flex-basis: 50%;
+  margin: 0 auto;
+}
+
+.top-bar--login-panel {
+  flex-basis: 50%;
+}
+
+button {
+  width: 120px;
+  height: 40px;
+  margin: 0 20px 0 0;
+}

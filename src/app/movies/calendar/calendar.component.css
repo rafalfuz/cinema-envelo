@@ -1,0 +1,11 @@
+mat-button-toggle-group {
+  margin: 1.2rem;
+  border: none;
+}
+mat-button-toggle {
+  font-size: 1.4rem;
+}
+.mat-button-toggle-checked {
+  background-color: #354760;
+  color: white;
+}

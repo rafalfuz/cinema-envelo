@@ -1,0 +1,67 @@
+<div class="movie-wrapper">
+  <div class="movie-image-wrapper">
+    <div class="movie-image-poster">
+      <img
+        class="movie-image-poster-img"
+        src="{{ movie.movie.image }}"
+        alt=""
+      />
+      <p *ngIf="movie.movie.premiere" class="premiereInfo">Premiera</p>
+    </div>
+  </div>
+  <div class="movie-info">
+    <h1 class="movie-info-title">{{ movie.movie.title }}</h1>
+    <p class="movie-info-about">
+      {{ movie.movie.genre }} | {{ movie.movie.runTime }} minut |
+      {{ movie.movie.pg }}
+    </p>
+    <p class="movie-info-description">
+      {{
+        isFullyBlown
+          ? movie.movie.descriptionShort
+          : (movie.movie.descriptionShort | truncate : 120)
+      }}
+    </p>
+    <p
+      class="movie-info-description-show"
+      (click)="handleVisibiltyDescription()"
+    >
+      {{ isFullyBlown ? "Ukryj" : "Więcej" }}
+    </p>
+    <mat-button-toggle-group
+      name="hoursOfSeans"
+      aria-label="SeansHours"
+      class="hoursOfSeans"
+    >
+      <mat-button-toggle
+        class="hourOfSeans"
+        *ngFor="let hour of movie.hours"
+        (click)="
+          navigateToReservation(
+            movie.day,
+            hour.time,
+            hour.roomId,
+            hour.showingId
+          )
+        "
+        value="{{ hour.time }}"
+        >{{ hour.time }}
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <div class="movie-rating">
+    <p class="rate">{{ movie.movie.rating }} / 10</p>
+    <div class="rate-btns" *ngIf="(user | async)?.role === 'customer'">
+      <button class="rate-btn" mat-stroked-button (click)="openDialog()">
+        Oceń ten film!
+      </button>
+      <button
+        class="rate-btn"
+        mat-stroked-button
+        (click)="toggleDeclareToWatchList(movie.movie.id)"
+      >
+        {{ declaredToWatchList ? "Nie chcę obejrzeć" : "Chcę obejrzeć" }}
+      </button>
+    </div>
+  </div>
+</div>

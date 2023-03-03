@@ -1,0 +1,29 @@
+<div class="top-bar">
+  <p class="top-bar--title" (click)="reloadHomeView()" [routerLink]="'/'">
+    KINO
+  </p>
+
+  <div class="top-bar--login-panel" *ngIf="(user | async)! as user">
+    <button mat-raised-button>🛒</button>
+    <ng-container *ngIf="(authValue | async)!.hasAuth; else offline">
+      <button mat-raised-button [matMenuTriggerFor]="menu">
+        Witaj {{ user.name }}
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="'/my-tickets'">Moje bilety</button>
+        <button mat-menu-item [routerLink]="'/watch-list'">
+          Chcę obejrzec
+        </button>
+        <button mat-menu-item [routerLink]="'/settings'">Ustawienia</button>
+        <button mat-menu-item (click)="authStateService.logout()">
+          Wyloguj
+        </button>
+      </mat-menu>
+    </ng-container>
+    <ng-template #offline>
+      <button mat-raised-button [routerLink]="'/login'">Zaloguj</button>
+    </ng-template>
+  </div>
+</div>
+
+<hr />

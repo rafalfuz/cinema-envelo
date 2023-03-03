@@ -1,0 +1,91 @@
+<h1>Title of movie, DD/MM/RRRR, godz: time</h1>
+<ul>
+  <li>Rzad D Miejsce 6 XX PLN</li>
+</ul>
+<p class="total-prize">Razem: XX PLN</p>
+<form [formGroup]="orderTicketsForm" class="order-form">
+  <div class="orderer-name">
+    <mat-form-field
+      class="orderer-name-input orderer-name-input-name"
+      appearance="outline"
+    >
+      <mat-label>Imię</mat-label>
+      <input matInput placeholder="Imię*" formControlName="name" />
+      <mat-error *ngIf="nameCtrl.invalid">{{
+        getNameErrorMessage()
+      }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="orderer-name-input">
+      <mat-label>Nazwisko</mat-label>
+      <input matInput placeholder="Nazwisko*" formControlName="surname" />
+      <mat-error *ngIf="surNameCtrl.invalid">{{
+        getSurNameErrorMessage()
+      }}</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="orderer-contact">
+    <mat-form-field appearance="outline" class="orderer-tel-input">
+      <mat-label>Numer telefonu</mat-label>
+      <input
+        type="tel"
+        matInput
+        placeholder="Numer telefonu*"
+        formControlName="phoneNumber"
+      />
+      <mat-error *ngIf="phoneNumberCtrl.invalid">{{
+        getPhoneNumberErrorMessage()
+      }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="orderer-email-input">
+      <mat-label>Adres email</mat-label>
+      <input
+        type="mail"
+        matInput
+        placeholder="Adres email"
+        formControlName="email"
+      />
+      <mat-error *ngIf="emailCtrl.invalid">{{
+        getEmailErrorMessage()
+      }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="orderer-email-input">
+      <mat-label>Powtorz adres email</mat-label>
+      <input
+        type="mail"
+        matInput
+        placeholder="Powtórz adres email"
+        formControlName="emailRepeat"
+      />
+      <mat-error *ngIf="emailCtrl.invalid">{{
+        getEmailRepeatErrorMessage()
+      }}</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="orderer-promo">
+    <div class="orderer-promo-approval">
+      <label class="switch">
+        <input formControlName="newsletter-toggler" type="checkbox" />
+        <span class="slider round"></span>
+      </label>
+      <p>Chcę otrzymywać informację o zniżkach, promocjach itp</p>
+    </div>
+    <mat-form-field appearance="outline" class="orderer-promoCode-input">
+      <mat-label>Kod zniżkowy</mat-label>
+      <input
+        type="number"
+        matInput
+        placeholder="Kod zniżkowy"
+        formControlName="promo"
+      />
+      <mat-error *ngIf="promoCtrl.invalid">{{
+        getPromoCtrlErrorMessage()
+      }}</mat-error>
+    </mat-form-field>
+  </div>
+
+  <button mat-raised-button>Zamawiam!</button>
+  <a>Wróć do wyboru miejsc</a>
+</form>

@@ -1,0 +1,45 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.screen {
+  margin-top: 50px;
+  height: 20px;
+  background-color: aliceblue;
+  width: 750px;
+  text-align: center;
+  color: black;
+  line-height: 20px;
+  border-radius: 2px;
+}
+
+.audience {
+  margin-top: 100px;
+  width: 700px;
+  height: 450px;
+}
+.row {
+  display: flex;
+  justify-content: center;
+}
+.row-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  margin: 3px 5px;
+
+  font-weight: bold;
+}
+.seat {
+  width: 35px;
+  height: 35px;
+  border: 1px solid white;
+  margin: 3px;
+}
+.seat:first-child {
+  margin-left: 5px;
+}

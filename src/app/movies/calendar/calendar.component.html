@@ -1,0 +1,11 @@
+<ng-container *ngIf="week$ | async as week">
+  <mat-button-toggle-group name="dayOfWeek" aria-label="Font Style">
+    <mat-button-toggle
+      *ngFor="let day of week.week"
+      [routerLink]="['', day]"
+      [value]="day"
+      [checked]="(firstDayOfRepertuare$ | async) === day"
+      >{{ day }}</mat-button-toggle
+    >
+  </mat-button-toggle-group>
+</ng-container>

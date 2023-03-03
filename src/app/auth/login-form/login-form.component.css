@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login-view-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: clamp(21px, 3.5vw, 120px) clamp(25px, 10.5vw, 160px);
+  min-width: clamp(250px, 50vw, 600px);
+  border: 1px solid white;
+  border-radius: 5%;
+}
+
+input {
+  height: 50px;
+  width: 100%;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: clamp(248px, 30vw, 300px);
+  gap: clamp(0px, 30vw, 10px);
+}
+
+button {
+  align-self: center;
+}

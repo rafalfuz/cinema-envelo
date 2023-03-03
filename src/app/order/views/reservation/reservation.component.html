@@ -1,0 +1,26 @@
+<ng-container *ngIf="data$ | async as data">
+  <h1>
+    {{ data.state?.movie?.title }}, {{ data.state?.day }} godz.
+    {{ data.state?.time }}
+  </h1>
+  <div class="screen"><p>EKRAN</p></div>
+  <div class="audience">
+    <div *ngFor="let column of columns">
+      <div class="row">
+        <div class="row-title">{{ alphabet[column] }}</div>
+        <div class="seat" *ngFor="let row of rows"></div>
+      </div>
+    </div>
+  </div>
+  <div class="order-result">
+    <ol>
+      <li>
+        <p>Rząd E Miejsce 6</p>
+        <input type="select" value="bilet normalny" />
+        <div>🗑</div>
+        <p>22 PLN</p>
+      </li>
+    </ol>
+  </div>
+  <p>Przejdź do zamówienia</p>
+</ng-container>
