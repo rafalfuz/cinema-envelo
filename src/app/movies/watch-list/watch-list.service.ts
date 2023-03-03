@@ -22,6 +22,9 @@ export class WatchListService {
   private moviesUrl = 'http://localhost:3000/movies';
   currentUser: string | null = '';
   private watchList$$ = new BehaviorSubject<WatchListRecord[]>([]);
+  private declareToWatchList$$ = new BehaviorSubject<{ hasDeclared: boolean }>({
+    hasDeclared: false,
+  });
 
   constructor() {
     this.authService.auth$.subscribe((data) => (this.currentUser = data.id));
@@ -41,6 +44,10 @@ export class WatchListService {
   get watchList$() {
     return this.watchList$$.asObservable();
   }
+
+  // toogleDeclareToWatchWatchList(title){
+  //   return this.declareToWatchLis
+  // }
 
   getMovieRecordByTitle$(title: string) {
     return this.http.get<Movies>(`${this.moviesUrl}/${title}`);

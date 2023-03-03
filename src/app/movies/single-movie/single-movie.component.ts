@@ -1,12 +1,12 @@
 import { Component, inject, Input } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { tap } from 'rxjs';
+import { BehaviorSubject, combineLatest, of, tap } from 'rxjs';
 import { WatchListService } from 'src/app/movies/watch-list/watch-list.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogRateComponent } from '../dialog/dialog-rate.component';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
-import { Movie, Movies, Reperoire } from 'models';
+import { Reperoire } from 'models';
 
 @Component({
   selector: 'app-single-movie',
@@ -16,6 +16,7 @@ import { Movie, Movies, Reperoire } from 'models';
 export class SingleMovieComponent {
   @Input() movie!: Reperoire;
 
+  declaredToWatchList: boolean = false;
   dialog = inject(MatDialog);
   router = inject(Router);
   user = inject(AuthService).auth$;
@@ -23,7 +24,7 @@ export class SingleMovieComponent {
   toast = inject(ToastrService);
 
   isFullyBlown = false;
-  declaredToWatchList!: boolean;
+
   currentUser!: string | null;
 
   handleVisibiltyDescription() {
@@ -67,18 +68,19 @@ export class SingleMovieComponent {
     this.declaredToWatchList = false;
   }
 
-  checkDeclaredToWatchStatus() {
-    const movieTitle = this.movie.movie.id;
-    this.watchListService.watchList$.subscribe((data) => {
-      data.map((data) => {
-        if (data.movie === movieTitle && data.idUser === this.currentUser) {
-          this.declaredToWatchList = this.declaredToWatchList;
-        } else {
-          this.declaredToWatchList = false;
-        }
-      });
-    });
-  }
+  // checkDeclaredToWatchStatus() {
+  //   const movieTitle = this.movie.movie.id;
+  //   this.watchListService.watchList$.subscribe((data) => {
+  //     data.map((data) => {
+  //       if (data.movie === movieTitle && data.idUser === this.currentUser) {
+  //         (this.declaredToWatchList) =  this.declaredToWatchList
+  //       } else {
+  //         this.declaredToWatchList = false;
+  //       }
+  //     });
+  //   });
+  // }
+
   navigateToReservation(
     day: string,
     time: string,

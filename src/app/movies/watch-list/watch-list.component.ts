@@ -1,8 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { Movies } from 'models';
-import { combineLatest, map, Observable, of, switchMap } from 'rxjs';
+import { combineLatest, map } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
-
 import { MoviesService } from '../movies.service';
 import { WatchListService } from './watch-list.service';
 

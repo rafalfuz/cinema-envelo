@@ -1,6 +1,6 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './shared/components/top-bar/top-bar.component';
@@ -23,6 +23,7 @@ import { SingleWatchRecordComponent } from './movies/watch-list/single-watch-rec
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { DialogRateComponent } from './movies/dialog/dialog-rate.component';
 import { AuthService } from './auth/auth.service';
+import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 
 function initFactory(initService: AuthService) {
   return () => initService.autoLogin();
@@ -60,6 +61,11 @@ function initFactory(initService: AuthService) {
       provide: APP_INITIALIZER,
       useFactory: initFactory,
       deps: [AuthService],
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
       multi: true,
     },
   ],

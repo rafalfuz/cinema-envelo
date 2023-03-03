@@ -1,9 +1,6 @@
-<ng-container *ngIf="showList | async as showList; else loader">
+<ng-container *ngIf="showList | async as showList">
   <app-single-watch-record
     *ngFor="let showRecord of showList"
     [showRecord]="showRecord"
   ></app-single-watch-record>
 </ng-container>
-<ng-template class="spinner" #loader>
-  <mat-spinner></mat-spinner>
-</ng-template>
