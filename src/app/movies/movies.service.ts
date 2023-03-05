@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Movies, Reperoire } from 'models';
+
 import { BehaviorSubject, Observable } from 'rxjs';
+import { Movies, Reperoire } from './movies.interface';
 
 @Injectable({
   providedIn: 'root',

@@ -2,8 +2,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, map, MonoTypeOperatorFunction } from 'rxjs';
-import { User } from 'models';
+
 import { ToastrService } from 'ngx-toastr';
+import { User } from './auth.interface';
 
 export type LoginCredentials = { email: string; password: string };
 

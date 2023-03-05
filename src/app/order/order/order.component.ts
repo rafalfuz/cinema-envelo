@@ -6,8 +6,15 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-order',
   template: `
     <section class="order"><router-outlet></router-outlet></section>
+    <style>
+      .order {
+        width: 80%;
+        margin: 30px auto;
+        padding: 20px;
+        min-height: 80vh;
+      }
+    </style>
   `,
-  styleUrls: ['./order.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterOutlet],
 })
