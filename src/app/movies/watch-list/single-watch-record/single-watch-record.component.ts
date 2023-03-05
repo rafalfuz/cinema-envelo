@@ -1,5 +1,6 @@
 import { Component, inject, Input } from '@angular/core';
-import { Movies, Reperoire } from 'models';
+import { Movies } from '../../movies.interface';
+
 import { WatchListService } from '../watch-list.service';
 
 @Component({

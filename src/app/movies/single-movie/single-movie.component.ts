@@ -6,7 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogRateComponent } from '../dialog/dialog-rate.component';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
-import { Reperoire } from 'models';
+import { Reperoire } from '../movies.interface';
 
 @Component({
   selector: 'app-single-movie',

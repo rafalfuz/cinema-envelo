@@ -8,7 +8,9 @@
     <div *ngFor="let column of columns">
       <div class="row">
         <div class="row-title">{{ alphabet[column] }}</div>
-        <div class="seat" *ngFor="let row of rows"></div>
+        <div class="seat" *ngFor="let row of rows; let index = index">
+          {{ index + 1 }}
+        </div>
       </div>
     </div>
   </div>

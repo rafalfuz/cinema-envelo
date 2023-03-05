@@ -1,7 +1,7 @@
 import { state } from '@angular/animations';
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { ShowingDatas } from 'models';
+import { ShowingDatas } from './order.interface';
 import { BehaviorSubject, from, of, ReplaySubject } from 'rxjs';
 
 @Injectable({

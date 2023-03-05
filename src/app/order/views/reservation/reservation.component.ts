@@ -1,8 +1,7 @@
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { ShowingDatas } from 'models';
-import { EMPTY, from, Observable, of, switchMap, tap } from 'rxjs';
+import { tap } from 'rxjs';
 import { ShowingService } from '../../showing.service';
 
 @Component({
