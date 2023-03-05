@@ -27,19 +27,8 @@ export class ReservationComponent {
   );
 
   ngOnInit() {
-    console.log(this.route.snapshot.params);
-
     this.showingService.fetchShowingByShowingId(
       this.route.snapshot.params['id']
     );
-    // this.route.paramMap.pipe(
-    //   switchMap((params) => {
-    //     const showingId = params.get('showingId');
-    //     console.log('Parammap', params);
-    //     return showingId
-    //       ? of(this.showingService.fetchShowingByShowingId(showingId))
-    //       : of(console.log('cos nie tak Rafał'));
-    //   })
-    // ); DO MUZEUM
   }
 }

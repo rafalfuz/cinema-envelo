@@ -9,9 +9,8 @@ import { WatchListService } from '../watch-list.service';
 })
 export class SingleWatchRecordComponent {
   @Input() showRecord!: Movies;
-
+  declaredToWatch?: boolean;
   watchListService = inject(WatchListService);
-
   apiLoaded = false;
   currentVideoId: string | null = null;
 
@@ -22,6 +21,10 @@ export class SingleWatchRecordComponent {
       document.body.appendChild(tag);
       this.apiLoaded = true;
     }
+
+    // if (this.watchListService.checkExist(this.showRecord.title)) {
+    //   this.declaredToWatch = true;
+    // }
   }
 
   selectVideo(video: Movies) {
@@ -31,5 +34,6 @@ export class SingleWatchRecordComponent {
 
   remove(title: string) {
     this.watchListService.removeFromWatchList(title);
+    this.declaredToWatch = false;
   }
 }

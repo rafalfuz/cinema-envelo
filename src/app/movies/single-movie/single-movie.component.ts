@@ -40,10 +40,10 @@ export class SingleMovieComponent {
   }
 
   toggleDeclareToWatchList(title: string) {
-    if (this.declaredToWatchList) {
-      this.removeFromWatchList(title);
-    } else {
+    if (!this.declaredToWatchList) {
       this.addToWatchList(title);
+    } else {
+      this.removeFromWatchList(title);
     }
   }
 
@@ -99,6 +99,9 @@ export class SingleMovieComponent {
       })
     );
 
+    if (this.watchListService.checkExist(this.movie.movie.id)) {
+      this.declaredToWatchList = true;
+    }
     // this.checkDeclaredToWatchStatus();
   }
 }

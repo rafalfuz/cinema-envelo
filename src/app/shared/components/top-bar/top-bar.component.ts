@@ -13,11 +13,4 @@ export class TopBarComponent {
   authValue = inject(AuthService).confirm$;
   authStateService = inject(AuthService);
   durationInSeconds = 5;
-
-  reloadHomeView() {
-    // const x = setTimeout(() => {
-    //   window.location.reload();
-    // }, 1);
-    // return x;
-  }
 }

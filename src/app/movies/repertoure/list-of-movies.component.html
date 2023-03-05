@@ -1,11 +1,11 @@
 <app-calendar></app-calendar>
-<ng-container *ngIf="movies$ | async as movies; else loader">
+<ng-container *ngIf="movies$ | async as movies; else empty">
   <app-single-movie
     class="list-of-movies"
     *ngFor="let movie of movies"
     [movie]="movie"
   ></app-single-movie>
 </ng-container>
-<ng-template class="spinner" #loader>
-  <mat-spinner></mat-spinner>
+<ng-template #empty>
+  <h1>PUSTO</h1>
 </ng-template>

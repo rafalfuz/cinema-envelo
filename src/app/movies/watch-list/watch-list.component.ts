@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { combineLatest, map } from 'rxjs';
+import { combineLatest, map, tap } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
 import { MoviesService } from '../movies.service';
 import { WatchListService } from './watch-list.service';

@@ -25,6 +25,5 @@ export class ListOfMoviesComponent {
     this.actRoute.params.subscribe((params) => {
       this.movieService.getMoviesByDay(params['date']);
     });
-    // this.movies$.subscribe((data) => console.log(data));
   }
 }

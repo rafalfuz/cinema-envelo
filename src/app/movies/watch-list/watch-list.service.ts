@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Movies } from 'models';
-import { ToastrService } from 'ngx-toastr';
-import { BehaviorSubject, map, Observable, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, map, switchMap, tap } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
 
 export interface WatchListRecord {
@@ -16,7 +15,6 @@ export interface WatchListRecord {
 })
 export class WatchListService {
   private http = inject(HttpClient);
-  private toast = inject(ToastrService);
   private authService = inject(AuthService);
   private url = 'http://localhost:3000/watchList';
   private moviesUrl = 'http://localhost:3000/movies';
@@ -45,19 +43,16 @@ export class WatchListService {
     return this.watchList$$.asObservable();
   }
 
-  // toogleDeclareToWatchWatchList(title){
-  //   return this.declareToWatchLis
-  // }
-
   getMovieRecordByTitle$(title: string) {
     return this.http.get<Movies>(`${this.moviesUrl}/${title}`);
   }
 
   addMovieToWatchList(title: string) {
     const user = this.currentUser;
+    const id = new Date().valueOf();
     return this.http
       .post<WatchListRecord>(this.url, {
-        id: new Date().valueOf(),
+        id: id,
         idUser: user,
         movie: title,
       })
@@ -88,5 +83,24 @@ export class WatchListService {
     this.findId(title)
       .pipe(switchMap((id) => this.http.delete(`${this.url}/${id}`)))
       .subscribe(() => this.fetchWatchList());
+  }
+
+  checkExist(title: string) {
+    const user = this.currentUser;
+    let exist = false;
+    this.watchList$
+      .pipe(
+        map((watchRecord) => {
+          return watchRecord
+            .filter((record) => record.idUser === user)
+            .map((result) => {
+              return result.movie === title;
+            });
+        })
+      )
+      .subscribe((result) => {
+        exist = result.some((result) => result === true);
+      });
+    return exist;
   }
 }

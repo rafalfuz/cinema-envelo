@@ -1,7 +1,5 @@
 <div class="top-bar">
-  <p class="top-bar--title" (click)="reloadHomeView()" [routerLink]="'/'">
-    KINO
-  </p>
+  <p class="top-bar--title" [routerLink]="'/'">KINO</p>
 
   <div class="top-bar--login-panel" *ngIf="(user | async)! as user">
     <button mat-raised-button>🛒</button>

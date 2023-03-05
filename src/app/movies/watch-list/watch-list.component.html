@@ -1,6 +1,9 @@
-<ng-container *ngIf="showList | async as showList">
+<ng-container *ngIf="showList | async as showList; else empty">
   <app-single-watch-record
     *ngFor="let showRecord of showList"
     [showRecord]="showRecord"
   ></app-single-watch-record>
 </ng-container>
+<ng-template #empty>
+  <h1>PUSTO</h1>
+</ng-template>

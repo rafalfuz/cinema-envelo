@@ -53,7 +53,6 @@ export class AuthService {
   }
 
   autoLogin() {
-    console.log('AutoLoggin works!');
     if (localStorage.getItem('userId')) {
       this.confirm$$.next({ hasAuth: true });
       this.user$$.next({
