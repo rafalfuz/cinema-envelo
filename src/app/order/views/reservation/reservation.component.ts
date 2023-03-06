@@ -3,6 +3,7 @@ import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs';
 import { ShowingService } from '../../showing.service';
+import { SeatComponent } from '../../components/seat/seat/seat.component';
 import { TakenSeat } from '../../order.interface';
 
 @Component({
@@ -11,7 +12,7 @@ import { TakenSeat } from '../../order.interface';
   templateUrl: './reservation.component.html',
   styleUrls: ['./reservation.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgIf, AsyncPipe, NgFor],
+  imports: [NgIf, AsyncPipe, NgFor, SeatComponent],
 })
 export class ReservationComponent {
   private route = inject(ActivatedRoute);
@@ -34,7 +35,7 @@ export class ReservationComponent {
     })
   );
 
-  isSeatTaken(row: string, column: number): boolean {
+  isSeatSold(row: string, column: number): boolean {
     return (
       this.takenSeats?.some(
         (seat) => seat.position.row === row && seat.position.column === column

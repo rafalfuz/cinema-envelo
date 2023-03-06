@@ -8,14 +8,21 @@
     <div *ngFor="let row of rows; let index = index">
       <div class="row">
         <div class="row-title">{{ alphabet[index] }}</div>
-        <div
+        <!-- <div
           class="seat"
           [class.taken]="isSeatTaken(row, column)"
           (click)="onSeatClick(row, column)"
           *ngFor="let column of columns"
         >
           {{ column }}
-        </div>
+        </div> -->
+        <app-seat
+          *ngFor="let column of columns"
+          [isSold]="isSeatSold(row, column)"
+          (seatClick)="onSeatClick(row, column)"
+          [row]="row"
+          [column]="column"
+        ></app-seat>
       </div>
     </div>
   </div>

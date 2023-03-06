@@ -1,0 +1,10 @@
+<div
+  class="seat"
+  [ngClass]="{
+    taken: isSold,
+    chosen: isChosen
+  }"
+  (click)="handleSeat()"
+>
+  {{ column }}
+</div>

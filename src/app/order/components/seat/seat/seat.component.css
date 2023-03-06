@@ -1,0 +1,30 @@
+.seat {
+  width: 35px;
+  height: 35px;
+  border: 1px solid white;
+  margin: 3px;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 12px;
+}
+
+.seat:hover {
+  background-color: white;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 100px 5px rgba(176, 177, 193, 1);
+  -moz-box-shadow: 0px 0px 100px 5px rgba(176, 177, 193, 1);
+  box-shadow: 0px 0px 100px 5px rgba(176, 177, 193, 1);
+  color: #000;
+}
+.taken {
+  background-color: crimson;
+  color: white;
+  pointer-events: none;
+}
+.taken:hover {
+  background-color: crimson;
+}
