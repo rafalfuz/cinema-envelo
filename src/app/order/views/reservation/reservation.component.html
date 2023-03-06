@@ -5,11 +5,16 @@
   </h1>
   <div class="screen"><p>EKRAN</p></div>
   <div class="audience">
-    <div *ngFor="let column of columns">
+    <div *ngFor="let row of rows; let index = index">
       <div class="row">
-        <div class="row-title">{{ alphabet[column] }}</div>
-        <div class="seat" *ngFor="let row of rows; let index = index">
-          {{ index + 1 }}
+        <div class="row-title">{{ alphabet[index] }}</div>
+        <div
+          class="seat"
+          [class.taken]="isSeatTaken(row, column)"
+          (click)="onSeatClick(row, column)"
+          *ngFor="let column of columns; let index = index"
+        >
+          {{ column }}
         </div>
       </div>
     </div>

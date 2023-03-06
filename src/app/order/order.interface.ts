@@ -14,7 +14,7 @@ export interface TicketInfo {
 
 export interface Position {
   row: string;
-  column: string;
+  column: number;
 }
 
 export interface TakenSeat {
@@ -32,7 +32,7 @@ export interface Showing {
 export interface Cinemarooms {
   id: string;
   seats: {
-    position: { row: string; column: string };
+    position: { row: string; column: number };
     isBusy: boolean;
     status: boolean;
   };

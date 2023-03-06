@@ -3,14 +3,14 @@
     {
       "id": "sala1",
       "name": "Niagara",
-      "rows": 16,
-      "columns": 9
+      "rows": 9,
+      "columns": 16
     },
     {
       "id": "sala2",
       "name": "Zanzibar",
-      "rows": 10,
-      "columns": 6
+      "rows": 6,
+      "columns": 10
     },
     {
       "id": "sala3",
@@ -29,6 +29,21 @@
       "id": 1678027371091,
       "idUser": "izakrzan@onlyfans.com",
       "movie": "spider-man-into-the-spider-verse"
+    },
+    {
+      "id": 1678101149030,
+      "idUser": "rafalfuz@gmail.com",
+      "movie": "avengers-endgame"
+    },
+    {
+      "id": 1678101150935,
+      "idUser": "rafalfuz@gmail.com",
+      "movie": "spider-man-into-the-spider-verse"
+    },
+    {
+      "id": 1678101153052,
+      "idUser": "rafalfuz@gmail.com",
+      "movie": "top-gun-maverick"
     }
   ],
   "user": [
@@ -528,21 +543,21 @@
         {
           "position": {
             "row": "E",
-            "column": "6"
+            "column": 6
           },
           "isBusy": true
         },
         {
           "position": {
             "row": "E",
-            "column": "7"
+            "column": 7
           },
           "isBusy": true
         },
         {
           "position": {
             "row": "H",
-            "column": "9"
+            "column": 9
           },
           "isBusy": true
         }
@@ -558,21 +573,21 @@
         {
           "position": {
             "row": "E",
-            "column": "6"
+            "column": 6
           },
           "isBusy": true
         },
         {
           "position": {
             "row": "A",
-            "column": "7"
+            "column": 7
           },
           "isBusy": true
         },
         {
           "position": {
             "row": "H",
-            "column": "9"
+            "column": 9
           },
           "isBusy": true
         }
@@ -604,21 +619,21 @@
         {
           "position": {
             "row": "E",
-            "column": "6"
+            "column": 6
           },
           "isBusy": true
         },
         {
           "position": {
             "row": "E",
-            "column": "7"
+            "column": 7
           },
           "isBusy": true
         },
         {
           "position": {
             "row": "E",
-            "column": "8"
+            "column": 8
           },
           "isBusy": true
         }
@@ -633,36 +648,36 @@
       "takenSeats": [
         {
           "position": {
-            "row": "H",
-            "column": "1"
+            "row": "F",
+            "column": 1
           },
           "isBusy": true
         },
         {
           "position": {
-            "row": "H",
-            "column": "2"
+            "row": "F",
+            "column": 2
           },
           "isBusy": true
         },
         {
           "position": {
-            "row": "H",
-            "column": "3"
-          },
-          "isBusy": true
-        },
-        {
-          "position": {
-            "row": "C",
-            "column": "7"
+            "row": "F",
+            "column": 3
           },
           "isBusy": true
         },
         {
           "position": {
             "row": "C",
-            "column": "8"
+            "column": 7
+          },
+          "isBusy": true
+        },
+        {
+          "position": {
+            "row": "C",
+            "column": 8
           },
           "isBusy": true
         }
@@ -678,7 +693,7 @@
         {
           "position": {
             "row": "C",
-            "column": "4"
+            "column": 4
           },
           "isBusy": true
         }
@@ -694,14 +709,14 @@
         {
           "position": {
             "row": "C",
-            "column": "4"
+            "column": 4
           },
           "isBusy": true
         },
         {
           "position": {
             "row": "C",
-            "column": "5"
+            "column": 5
           },
           "isBusy": true
         }

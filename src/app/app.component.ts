@@ -4,11 +4,10 @@ import { LoadingStateService } from './core/interceptors/loading.service';
 @Component({
   selector: 'app-root',
   template: ` <app-top-bar></app-top-bar>
-    <!-- <ng-container *ngIf="loading$ | async"
-      ><mat-spinner></mat-spinner        -------- ZNALEZC ROZWIAZANIE NA POPRAWNE WYPOZYCJONOWANIE ZEBY NIE PRZESKAKIWALA STRONA
-    ></ng-container> -->
+    <ng-container class="spinner-overlay" *ngIf="loading$ | async"
+      ><mat-spinner></mat-spinner
+    ></ng-container>
     <router-outlet></router-outlet>
-
     <app-footbar></app-footbar>`,
 })
 export class AppComponent {

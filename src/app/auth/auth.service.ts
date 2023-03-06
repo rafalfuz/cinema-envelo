@@ -1,7 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, map, MonoTypeOperatorFunction } from 'rxjs';
+import { BehaviorSubject, map } from 'rxjs';
 
 import { ToastrService } from 'ngx-toastr';
 import { User } from './auth.interface';

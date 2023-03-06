@@ -1,8 +1,9 @@
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs';
 import { ShowingService } from '../../showing.service';
+import { TakenSeat } from '../../order.interface';
 
 @Component({
   standalone: true,
@@ -15,15 +16,35 @@ import { ShowingService } from '../../showing.service';
 export class ReservationComponent {
   private route = inject(ActivatedRoute);
   showingService = inject(ShowingService);
+  rows: string[] = [];
   columns: number[] = [];
-  rows: number[] = [];
   alphabet: string[] = 'ABCDEFGHIJKLMNOPRSTUWZ'.split('');
+  takenSeats?: TakenSeat[] = [];
   data$ = this.showingService.showing$.pipe(
     tap((result) => {
-      this.columns = Array.from(Array(result.state?.room.columns).keys());
-      this.rows = Array.from(Array(result.state?.room.rows).keys());
+      this.rows = Array.from(Array(result.state?.room.rows).keys()).map(
+        (index) => {
+          return this.alphabet[index];
+        }
+      );
+      this.columns = Array.from(Array(result.state?.room.columns).keys()).map(
+        (result) => result + 1
+      );
+      this.takenSeats = result.state?.takenSeats;
     })
   );
+
+  isSeatTaken(row: string, column: number): boolean {
+    return (
+      this.takenSeats?.some(
+        (seat) => seat.position.row === row && seat.position.column === column
+      ) ?? false
+    );
+  }
+
+  onSeatClick(row: string, column: number) {
+    console.log(row, column);
+  }
 
   ngOnInit() {
     this.showingService.fetchShowingByShowingId(
