@@ -16,11 +16,11 @@ import {
   imports: [NgClass],
 })
 export class SeatComponent {
-  @Input() row: string = '';
-  @Input() column: number = 0;
-  @Input() isSold: boolean = false;
-  @Input() isChosen: boolean = false;
-  @Output() seatClick = new EventEmitter<{ row: string }>();
+  @Input() row?: string;
+  @Input() column?: number;
+  @Input() isSold?: boolean;
+  @Input() isChosen?: boolean;
+  @Output() seatClick = new EventEmitter();
 
   handleSeat() {
     this.seatClick.emit();

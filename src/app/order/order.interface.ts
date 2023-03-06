@@ -17,7 +17,7 @@ export interface Position {
   column: number;
 }
 
-export interface TakenSeat {
+export interface Seat {
   position: Position;
   isBusy: boolean;
 }
@@ -26,7 +26,7 @@ export interface Showing {
   id: string;
   roomId: string;
   movieId: string;
-  takenSeats: TakenSeat[];
+  soldSeats: Seat[];
 }
 
 export interface Cinemarooms {
@@ -44,7 +44,7 @@ export interface ShowingDatas {
   movieId: string;
   time: string;
   day: string;
-  takenSeats: TakenSeat[];
+  soldSeats: Seat[];
   room: {
     id: string;
     name: string;

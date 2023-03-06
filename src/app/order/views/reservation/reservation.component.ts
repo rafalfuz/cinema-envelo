@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs';
 import { ShowingService } from '../../showing.service';
 import { SeatComponent } from '../../components/seat/seat/seat.component';
-import { TakenSeat } from '../../order.interface';
+import { Seat } from '../../order.interface';
 
 @Component({
   standalone: true,
@@ -20,7 +20,7 @@ export class ReservationComponent {
   rows: string[] = [];
   columns: number[] = [];
   alphabet: string[] = 'ABCDEFGHIJKLMNOPRSTUWZ'.split('');
-  takenSeats?: TakenSeat[] = [];
+  soldSeats?: Seat[] = [];
   data$ = this.showingService.showing$.pipe(
     tap((result) => {
       this.rows = Array.from(Array(result.state?.room.rows).keys()).map(
@@ -31,13 +31,13 @@ export class ReservationComponent {
       this.columns = Array.from(Array(result.state?.room.columns).keys()).map(
         (result) => result + 1
       );
-      this.takenSeats = result.state?.takenSeats;
+      this.soldSeats = result.state?.soldSeats;
     })
   );
 
   isSeatSold(row: string, column: number): boolean {
     return (
-      this.takenSeats?.some(
+      this.soldSeats?.some(
         (seat) => seat.position.row === row && seat.position.column === column
       ) ?? false
     );
