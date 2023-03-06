@@ -12,7 +12,7 @@
           class="seat"
           [class.taken]="isSeatTaken(row, column)"
           (click)="onSeatClick(row, column)"
-          *ngFor="let column of columns; let index = index"
+          *ngFor="let column of columns"
         >
           {{ column }}
         </div>
