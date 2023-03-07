@@ -9,21 +9,21 @@ import { LoginFormComponent } from './auth/login-form/login-form.component';
 import { ListOfMoviesComponent } from './movies/repertoure/list-of-movies.component';
 import { SingleMovieComponent } from './movies/single-movie/single-movie.component';
 import { TruncatePipe } from './shared/pipes/truncate.pipe';
-import { OrderFormComponent } from './order/order-form/order-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { FootbarComponent } from './shared/components/footbar/footbar.component';
-import { AdminViewComponent } from './admin/admin-view.component';
 import { MaterialModule } from 'src/material.module';
 import { ToastrModule } from 'ngx-toastr';
-
 import { WatchListComponent } from './movies/watch-list/watch-list.component';
 import { SingleWatchRecordComponent } from './movies/watch-list/single-watch-record/single-watch-record.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { DialogRateComponent } from './movies/dialog/dialog-rate.component';
 import { AuthService } from './auth/auth.service';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 function initFactory(initService: AuthService) {
   return () => initService.autoLogin();
@@ -38,10 +38,8 @@ function initFactory(initService: AuthService) {
     ListOfMoviesComponent,
     SingleMovieComponent,
     TruncatePipe,
-    OrderFormComponent,
     PageNotFoundComponent,
     FootbarComponent,
-    AdminViewComponent,
     WatchListComponent,
     SingleWatchRecordComponent,
     DialogRateComponent,
@@ -55,6 +53,9 @@ function initFactory(initService: AuthService) {
     MaterialModule,
     YouTubePlayerModule,
     ToastrModule.forRoot(),
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]),
+    StoreRouterConnectingModule.forRoot(),
   ],
   providers: [
     {

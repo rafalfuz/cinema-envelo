@@ -17,7 +17,7 @@ export interface Movies {
   image: string;
   descriptionShort: string;
   rating: number;
-  votesNumber: string;
+  votesNumber: number;
   premiere: boolean;
   runTime: number;
   pg: number;

@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NonNullableFormBuilder, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
+  standalone: true,
   selector: 'app-order-form',
   templateUrl: './order-form.component.html',
   styleUrls: ['./order-form.component.css'],
+  imports: [ReactiveFormsModule, MatFormFieldModule],
 })
 export class OrderFormComponent {
+  private formBuilder = inject(NonNullableFormBuilder);
   orderTicketsForm = this.orderTicketsFormGroup();
-
-  constructor(private formBuilder: NonNullableFormBuilder) {
-    this.orderTicketsForm.valueChanges.subscribe(console.log);
-  }
 
   private orderTicketsFormGroup() {
     return this.formBuilder.group({

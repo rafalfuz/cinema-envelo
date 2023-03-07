@@ -4,9 +4,7 @@ import { LoadingStateService } from './core/interceptors/loading.service';
 @Component({
   selector: 'app-root',
   template: ` <app-top-bar></app-top-bar>
-    <ng-container class="spinner-overlay" *ngIf="loading$ | async"
-      ><mat-spinner></mat-spinner
-    ></ng-container>
+    <mat-spinner class="spinner-overlay" *ngIf="loading$ | async"></mat-spinner>
     <router-outlet></router-outlet>
     <app-footbar></app-footbar>`,
 })

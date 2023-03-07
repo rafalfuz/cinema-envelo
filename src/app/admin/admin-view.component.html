@@ -1,2 +1,16 @@
 <p>admin-view works!</p>
 <p>Dla Admina Rafał zrobi oddzielny modul kiedy nauczy sie ngrx</p>
+
+<form>
+  <h4>Wybierz film</h4>
+  <mat-form-field appearance="fill">
+    <mat-label>Favorite food</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let movie of movies$ | async" [value]="movie">
+        {{ movie.title }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
+
+<button mat-fab (click)="openDialog()">Open dialog</button>

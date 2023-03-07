@@ -1,0 +1,113 @@
+<form [formGroup]="formToAddMovie" (ngSubmit)="onSubmit()" class="order-form">
+  <div class="orderer-name">
+    <mat-form-field
+      class="orderer-name-input orderer-name-input-name"
+      appearance="outline"
+    >
+      <mat-label>Id</mat-label>
+      <input matInput placeholder="ID*" formControlName="id" />
+    </mat-form-field>
+
+    <mat-form-field
+      class="orderer-name-input orderer-name-input-name"
+      appearance="outline"
+    >
+      <mat-label>Tytul</mat-label>
+      <input matInput placeholder="Tytuł*" formControlName="title" />
+    </mat-form-field>
+
+    <mat-form-field
+      class="orderer-name-input orderer-name-input-name"
+      appearance="outline"
+    >
+      <mat-label>YouTube id</mat-label>
+      <input matInput placeholder="ViedoId" formControlName="videoId" />
+    </mat-form-field>
+
+    <mat-form-field
+      class="orderer-name-input orderer-name-input-name"
+      appearance="outline"
+    >
+      <mat-label>image</mat-label>
+      <input matInput placeholder="Image" formControlName="image" />
+    </mat-form-field>
+
+    <mat-form-field
+      class="orderer-name-input orderer-name-input-name"
+      appearance="outline"
+    >
+      <mat-label>Description</mat-label>
+      <input matInput placeholder="Opis" formControlName="descriptionShort" />
+    </mat-form-field>
+
+    <mat-form-field
+      class="orderer-name-input orderer-name-input-name"
+      appearance="outline"
+    >
+      <mat-label>Ocena</mat-label>
+      <input matInput placeholder="Ocena" formControlName="rating" />
+    </mat-form-field>
+
+    <mat-form-field
+      class="orderer-name-input orderer-name-input-name"
+      appearance="outline"
+    >
+      <mat-label>Ilosc glosow</mat-label>
+      <input
+        matInput
+        placeholder="Ilosc glosow"
+        formControlName="votesNumber"
+      />
+    </mat-form-field>
+
+    <mat-form-field
+      class="orderer-name-input orderer-name-input-name"
+      appearance="outline"
+    >
+      <mat-label>Premiera</mat-label>
+      <input matInput placeholder="Premiera" formControlName="premiere" />
+    </mat-form-field>
+
+    <mat-form-field
+      class="orderer-name-input orderer-name-input-name"
+      appearance="outline"
+    >
+      <mat-label>Czas trwania</mat-label>
+      <input matInput placeholder="Czas trwania" formControlName="runTimes" />
+    </mat-form-field>
+
+    <mat-form-field
+      class="orderer-name-input orderer-name-input-name"
+      appearance="outline"
+    >
+      <mat-label>Kategoria wiekowa</mat-label>
+      <input matInput placeholder="Kategoria wiekwoa" formControlName="pg" />
+    </mat-form-field>
+
+    <mat-form-field
+      class="orderer-name-input orderer-name-input-name"
+      appearance="outline"
+    >
+      <mat-label>Kategoria</mat-label>
+      <input matInput placeholder="Kategoria*" formControlName="genre" />
+    </mat-form-field>
+
+    <mat-form-field
+      class="orderer-name-input orderer-name-input-name"
+      appearance="outline"
+    >
+      <mat-label>Dzień</mat-label>
+      <input matInput placeholder="Dzien" formControlName="day" />
+    </mat-form-field>
+
+    <mat-form-field
+      class="orderer-name-input orderer-name-input-name"
+      appearance="outline"
+    >
+      <mat-label>Obsada</mat-label>
+      <input matInput placeholder="Obsada" formControlName="cast" />
+    </mat-form-field>
+  </div>
+  <button type="submit">WYSLIJ</button>
+  <button type="button">ANULUJ</button>
+</form>

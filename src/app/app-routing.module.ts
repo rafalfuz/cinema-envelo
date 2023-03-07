@@ -20,8 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    component: AdminViewComponent,
-    canActivate: [AdminGuard],
+    loadChildren: () => import('./admin/admin.module'),
   },
   {
     path: 'form',
