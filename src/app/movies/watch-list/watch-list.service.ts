@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-
 import { BehaviorSubject, map, switchMap, tap } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Movies } from '../movies.interface';

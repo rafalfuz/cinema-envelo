@@ -18,6 +18,16 @@
       </div>
     </div>
   </div>
+  <ng-container *ngIf="reservation$ | async as reservations">
+    <div class="order-result">
+      <ol>
+        <li *ngFor="let reservation of reservations">
+          <p>Zajęte:{{ reservation.row }}{{ reservation.column }}</p>
+        </li>
+      </ol>
+    </div>
+    <p>Przejdź do zamówienia</p>
+  </ng-container>
   <div class="order-result">
     <ol>
       <li>

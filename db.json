@@ -848,6 +848,15 @@
       "soldSeats": []
     }
   ],
+  "selectedSeats": [
+    {
+      "id": 1,
+      "showingId": "06-12-22-15-00-niagara-avengers-endgame",
+      "row": "B",
+      "column": 2,
+      "user": "rafalfuz@gmail.com"
+    }
+  ],
   "cinemaRooms": {
     "id": "1",
     "seats": [

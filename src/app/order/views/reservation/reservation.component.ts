@@ -1,10 +1,12 @@
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { tap } from 'rxjs';
+import { map, tap } from 'rxjs';
 import { ShowingService } from '../../showing.service';
 import { SeatComponent } from '../../components/seat/seat/seat.component';
 import { Seat } from '../../order.interface';
+import { ReservationService } from './reservation.service';
+import { ReservationApiService } from './reservation.api.service';
 
 @Component({
   standalone: true,
@@ -17,10 +19,14 @@ import { Seat } from '../../order.interface';
 export class ReservationComponent {
   private route = inject(ActivatedRoute);
   showingService = inject(ShowingService);
+
+  reservation$ = inject(ReservationService).reservation$;
   rows: string[] = [];
   columns: number[] = [];
   alphabet: string[] = 'ABCDEFGHIJKLMNOPRSTUWZ'.split('');
   soldSeats?: Seat[] = [];
+  selectedSeats?: Seat[] = [];
+
   data$ = this.showingService.showing$.pipe(
     tap((result) => {
       this.rows = Array.from(Array(result.state?.room.rows).keys()).map(
@@ -44,8 +50,17 @@ export class ReservationComponent {
   }
 
   onSeatClick(row: string, column: number) {
-    console.log(row, column);
+    console.log('Dodawnie filmow do DB');
   }
+
+  // isSeatSelected(row: string, column: number): boolean {
+  //   return (
+  //     this.selectedSeats?.some(
+  //       ////OBSERVABLA
+  //       (seat) => seat.position.row === row && seat.position.column === column
+  //     ) ?? false
+  //   );
+  // }
 
   ngOnInit() {
     this.showingService.fetchShowingByShowingId(

@@ -53,3 +53,11 @@ export interface ShowingDatas {
   };
   movie: Movie;
 }
+
+export interface Reservation {
+  id: number;
+  showingId: string;
+  row: string;
+  column: number;
+  user: string;
+}

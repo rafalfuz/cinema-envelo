@@ -28,3 +28,7 @@
 .sold:hover {
   background-color: crimson;
 }
+
+.selected {
+  background-color: #fff;
+}

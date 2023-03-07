@@ -19,7 +19,7 @@ export class SeatComponent {
   @Input() row?: string;
   @Input() column?: number;
   @Input() isSold?: boolean;
-  @Input() isChosen?: boolean;
+  @Input() isSelected?: boolean;
   @Output() seatClick = new EventEmitter();
 
   handleSeat() {
