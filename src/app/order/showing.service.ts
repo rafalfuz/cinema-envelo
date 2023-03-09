@@ -1,19 +1,23 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { ShowingDatas } from './order.interface';
-import { BehaviorSubject, from, of, ReplaySubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ShowingService {
   private http = inject(HttpClient);
+
   private showing$$ = new BehaviorSubject<{ state: ShowingDatas | null }>({
     state: null,
   });
+
   private url = 'http://localhost:3000/showings/';
 
-  constructor() {}
+  get showing$() {
+    return this.showing$$.asObservable();
+  }
 
   fetchShowingByShowingId(showingId: string) {
     this.http
@@ -21,9 +25,5 @@ export class ShowingService {
       .subscribe((data) => {
         this.showing$$.next({ state: data });
       });
-  }
-
-  get showing$() {
-    return this.showing$$.asObservable();
   }
 }

@@ -21,16 +21,6 @@
   ],
   "watchList": [
     {
-      "id": 1678027369442,
-      "idUser": "izakrzan@onlyfans.com",
-      "movie": "avengers-endgame"
-    },
-    {
-      "id": 1678027371091,
-      "idUser": "izakrzan@onlyfans.com",
-      "movie": "spider-man-into-the-spider-verse"
-    },
-    {
       "id": 1678027369499,
       "idUser": "izakrzan@onlyfans.com",
       "movie": "penettator"
@@ -138,7 +128,7 @@
       "cast": "Tom Cruise, Val Kilmer, Miles Teller, Jennifer Connelly, Bashir Salahuddin, Jon Hamm"
     },
     {
-      "id": "arcane - league of legends",
+      "id": "arcane-league-of-legends",
       "title": "Arcane",
       "videoId": "DQFJHusZS5c",
       "image": "https://m.media-amazon.com/images/M/MV5BYmU5OWM5ZTAtNjUzOC00NmUyLTgyOWMtMjlkNjdlMDAzMzU1XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_FMjpg_UX1000_.jpg",
@@ -151,21 +141,6 @@
       "genre": "TV Series",
       "day:": "10-12-2022",
       "cast": "Hailee Steinfeld, Kevin Alejando, Jason Spisak"
-    },
-    {
-      "id": "penetratore",
-      "title": "Avengers: Endgame",
-      "videoId": "TcMBFSGVi1c",
-      "image": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_FMjpg_UX1000_.jpg",
-      "descriptionShort": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
-      "rating": 8,
-      "votesNumber": 432,
-      "premiere": true,
-      "runTime": 181,
-      "pg": 13,
-      "genre": "Sci-Fi, Action",
-      "day:": "06-12-2022",
-      "cast": "Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth, Scarlett Johansson, Jeremy Renner, Paul Rudd, Brie Larson, Bradley Cooper, Benedict Cumberbatch, Elizabeth Olsen❤, Tom Holland, Zoe Saldana, "
     }
   ],
   "reperoire": [
@@ -506,7 +481,7 @@
     },
     {
       "movie": {
-        "id": "arcane - league of legends",
+        "id": "arcane-league-of-legends",
         "title": "Arcane",
         "image": "https://m.media-amazon.com/images/M/MV5BYmU5OWM5ZTAtNjUzOC00NmUyLTgyOWMtMjlkNjdlMDAzMzU1XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_FMjpg_UX1000_.jpg",
         "descriptionShort": "Set in Utopian Piltover and the oppressed underground of Zaun, the story follows the origins of two iconic League Of Legends champions and the power that will tear them apart.",
@@ -522,17 +497,17 @@
         {
           "time": "15:00",
           "roomId": "sala1",
-          "showingId": "10-12-22-15-00-niagara-arcane - league of legends"
+          "showingId": "10-12-22-15-00-niagara-arcane-league-of-legends"
         },
         {
           "time": "17:00",
           "roomId": "sala1",
-          "showingId": "10-12-22-17-00-niagara-arcane - league of legends"
+          "showingId": "10-12-22-17-00-niagara-arcane-league-of-legends"
         },
         {
           "time": "20:00",
           "roomId": "sala2",
-          "showingId": "10-12-22-20-00-zanzibar-arcane - league of legends"
+          "showingId": "10-12-22-20-00-zanzibar-arcane-league-of-legends"
         }
       ]
     }
@@ -870,6 +845,62 @@
       "time": "20:00",
       "day": "08-12-2022",
       "soldSeats": []
+    },
+    {
+      "id": "08-12-22-20-00-akwarium-spider-man-into-the-spider-verse",
+      "roomId": "sala3",
+      "movieId": "spider-man-into-the-spider-verse",
+      "time": "20:00",
+      "day": "08-12-2022",
+      "soldSeats": []
+    },
+    {
+      "id": "10-12-22-15-00-niagara-arcane-league-of-legends",
+      "roomId": "sala1",
+      "movieId": "arcane-league-of-legends",
+      "time": "15:00",
+      "day": "10-12-2022",
+      "soldSeats": []
+    },
+    {
+      "id": "10-12-22-17-00-niagara-arcane-league-of-legends",
+      "roomId": "sala1",
+      "movieId": "arcane-league-of-legends",
+      "time": "17:00",
+      "day": "10-12-2022",
+      "soldSeats": []
+    },
+    {
+      "id": "10-12-22-20-00-zanzibar-arcane-league-of-legends",
+      "roomId": "sala2",
+      "movieId": "arcane-league-of-legends",
+      "time": "20:00",
+      "day": "10-12-2022",
+      "soldSeats": []
+    },
+    {
+      "id": "12-12-22-15-00-niagara-avengers-endgame",
+      "roomId": "sala1",
+      "movieId": "arcane-league-of-legends",
+      "time": "15:00",
+      "day": "12-12-2022",
+      "soldSeats": []
+    },
+    {
+      "id": "12-12-22-17-00-zanzibar-avengers-endgame",
+      "roomId": "sala2",
+      "movieId": "arcane-league-of-legends",
+      "time": "17:00",
+      "day": "12-12-2022",
+      "soldSeats": []
+    },
+    {
+      "id": "12-12-22-20-00-akwarium-avengers-endgame",
+      "roomId": "sala3",
+      "movieId": "arcane-league-of-legends",
+      "time": "20:00",
+      "day": "12-12-2022",
+      "soldSeats": []
     }
   ],
   "selectedSeats": [
@@ -878,6 +909,27 @@
       "showingId": "06-12-22-15-00-niagara-avengers-endgame",
       "row": "B",
       "column": 2,
+      "user": "rafalfuz@gmail.com"
+    },
+    {
+      "id": 2,
+      "showingId": "06-12-22-15-00-niagara-avengers-endgame",
+      "row": "B",
+      "column": 3,
+      "user": "rafalfuz@gmail.com"
+    },
+    {
+      "id": 3,
+      "showingId": "06-12-22-15-00-niagara-avengers-endgame",
+      "row": "H",
+      "column": 15,
+      "user": "izakrzan@onlyfans.com"
+    },
+    {
+      "id": 4,
+      "showingId": "06-12-22-17-00-niagara-avengers-endgame",
+      "row": "D",
+      "column": 7,
       "user": "rafalfuz@gmail.com"
     }
   ],

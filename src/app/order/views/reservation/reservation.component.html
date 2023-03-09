@@ -14,29 +14,39 @@
           (seatClick)="onSeatClick(row, column)"
           [row]="row"
           [column]="column"
-        ></app-seat>
+        >
+        </app-seat>
       </div>
     </div>
   </div>
   <ng-container *ngIf="reservation$ | async as reservations">
     <div class="order-result">
-      <ol>
-        <li *ngFor="let reservation of reservations">
-          <p>Zajęte:{{ reservation.row }}{{ reservation.column }}</p>
-        </li>
-      </ol>
+      <form>
+        <mat-card *ngFor="let reservation of reservations">
+          <mat-card-content>
+            <p>Rząd: {{ reservation.row }} Miejsce: {{ reservation.column }}</p>
+            <mat-form-field appearance="fill">
+              <mat-label>Bilet</mat-label>
+              <mat-select>
+                <mat-option
+                  *ngFor="let ticket of ticketDetails$ | async"
+                  [value]="ticket"
+                >
+                  {{ ticket.type }} - {{ ticket.price }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-icon fontIcon="delete"></mat-icon>
+          </mat-card-content>
+        </mat-card>
+      </form>
     </div>
-    <p>Przejdź do zamówienia</p>
+    <button
+      class="submitFormBtn"
+      mat-raised-button
+      (click)="navigateToOrderForm()"
+    >
+      Przejdź do zamówienia
+    </button>
   </ng-container>
-  <div class="order-result">
-    <ol>
-      <li>
-        <p>Rząd E Miejsce 6</p>
-        <input type="select" value="bilet normalny" />
-        <div>🗑</div>
-        <p>22 PLN</p>
-      </li>
-    </ol>
-  </div>
-  <p>Przejdź do zamówienia</p>
 </ng-container>

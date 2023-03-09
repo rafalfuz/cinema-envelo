@@ -11,7 +11,7 @@ import { SingleMovieComponent } from './movies/single-movie/single-movie.compone
 import { TruncatePipe } from './shared/pipes/truncate.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import { FootbarComponent } from './shared/components/footbar/footbar.component';
 import { MaterialModule } from 'src/material.module';
 import { ToastrModule } from 'ngx-toastr';
@@ -24,6 +24,7 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { NoAccessViewComponent } from './core/no-access-view/no-access.view-component';
 
 function initFactory(initService: AuthService) {
   return () => initService.autoLogin();
@@ -43,6 +44,7 @@ function initFactory(initService: AuthService) {
     WatchListComponent,
     SingleWatchRecordComponent,
     DialogRateComponent,
+    NoAccessViewComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { OrderFormComponent } from './views/order-form/order-form.component';
 import { OrderComponent } from './order.component';
 import { ReservationComponent } from './views/reservation/reservation.component';
 
@@ -15,6 +16,10 @@ import { ReservationComponent } from './views/reservation/reservation.component'
             component: ReservationComponent,
           },
         ],
+      },
+      {
+        path: 'order',
+        component: OrderFormComponent,
       },
     ]),
   ],

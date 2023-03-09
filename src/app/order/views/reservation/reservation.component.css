@@ -33,3 +33,37 @@
   margin: 3px 5px;
   font-weight: bold;
 }
+
+mat-card {
+  margin: 20px;
+  color: black;
+  width: 600px;
+  height: 80px;
+}
+
+mat-card-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+mat-form-field {
+  width: 250px;
+  height: 60px;
+  background-color: white;
+}
+mat-select {
+  height: 60px;
+}
+mat-icon {
+  cursor: pointer;
+}
+.submitFormBtn {
+  width: 250px;
+  height: 50px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+.submitFormBtn:hover {
+  font-weight: bold;
+  transition: all 0.3s;
+}

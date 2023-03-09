@@ -1,10 +1,12 @@
-<div
-  class="seat"
-  [ngClass]="{
-    sold: isSold,
-    selected: isSelected
-  }"
-  (click)="handleSeat()"
->
-  {{ column }}
-</div>
+<ng-container *ngIf="isSeatSelected$ | async as isSeatSelected">
+  <div
+    class="seat"
+    [ngClass]="{
+      sold: isSold,
+      selected: isSeatSelected.isSeatSelected
+    }"
+    (click)="handleSeat()"
+  >
+    {{ column }}
+  </div>
+</ng-container>

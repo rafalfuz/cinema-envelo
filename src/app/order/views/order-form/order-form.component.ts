@@ -2,13 +2,15 @@ import { Component, inject } from '@angular/core';
 import { NonNullableFormBuilder, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import patterns from 'src/app/shared/validators/paterns';
 
 @Component({
   standalone: true,
   selector: 'app-order-form',
   templateUrl: './order-form.component.html',
   styleUrls: ['./order-form.component.css'],
-  imports: [ReactiveFormsModule, MatFormFieldModule],
+  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule],
 })
 export class OrderFormComponent {
   private formBuilder = inject(NonNullableFormBuilder);
@@ -17,19 +19,39 @@ export class OrderFormComponent {
   private orderTicketsFormGroup() {
     return this.formBuilder.group({
       name: this.formBuilder.control('', {
-        validators: [Validators.required],
+        validators: [
+          Validators.required,
+          Validators.maxLength(30),
+          Validators.pattern(patterns.nosigns),
+        ],
       }),
       surname: this.formBuilder.control('', {
-        validators: [Validators.required],
+        validators: [
+          Validators.required,
+          Validators.maxLength(30),
+          Validators.pattern(patterns.nosigns),
+        ],
       }),
       phoneNumber: this.formBuilder.control('', {
-        validators: [Validators.required],
+        validators: [
+          Validators.minLength(9),
+          Validators.maxLength(30),
+          Validators.pattern(patterns.phone),
+        ],
       }),
       email: this.formBuilder.control('', {
-        validators: [Validators.required],
+        validators: [
+          Validators.required,
+          Validators.maxLength(50),
+          Validators.pattern(patterns.email),
+        ],
       }),
       emailRepeat: this.formBuilder.control('', {
-        validators: [],
+        validators: [
+          Validators.required,
+          Validators.maxLength(50),
+          Validators.pattern(patterns.email),
+        ],
       }),
       newsletterToggler: this.formBuilder.control(false, {
         validators: [],

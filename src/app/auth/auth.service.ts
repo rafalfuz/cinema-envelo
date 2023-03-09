@@ -81,6 +81,6 @@ export class AuthService {
   }
 
   handleNoAuthState() {
-    this.router.navigate(['/noAccess']);
+    this.router.navigate(['/no-access']);
   }
 }

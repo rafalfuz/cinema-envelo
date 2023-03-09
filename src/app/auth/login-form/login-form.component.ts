@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { NonNullableFormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../auth.service';
+import { whiteSpaceValidator } from 'src/app/shared/validators/whitespace.validator';
 
 @Component({
   selector: 'app-login-form',
@@ -12,7 +13,6 @@ export class LoginFormComponent {
   private authService = inject(AuthService);
   private builder = inject(NonNullableFormBuilder);
   private toast = inject(ToastrService);
-
   form = this.createForm();
   userdata: any; // this.authService.userdata$;
 

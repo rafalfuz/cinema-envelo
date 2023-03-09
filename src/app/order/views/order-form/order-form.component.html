@@ -11,9 +11,9 @@
     >
       <mat-label>Imię</mat-label>
       <input matInput placeholder="Imię*" formControlName="name" />
-      <mat-error *ngIf="nameCtrl.invalid">{{
-        getNameErrorMessage()
-      }}</mat-error>
+      <mat-error *ngIf="nameCtrl.invalid">
+        {{ getNameErrorMessage() }}
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="orderer-name-input">

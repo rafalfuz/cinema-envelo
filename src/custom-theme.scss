@@ -51,10 +51,13 @@ mat-mdc-form-field {
   font-size: 12px;
 }
 
-mat-spinner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 99999;
+// mat-spinner {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   z-index: 99999;
+// }
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: white;
 }
