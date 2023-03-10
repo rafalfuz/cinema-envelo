@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { NonNullableFormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { whitespaceValidator } from 'src/app/shared/validators/whitespace.validator';
+import { User } from '../auth.interface';
 import { AuthService } from '../auth.service';
-import { whiteSpaceValidator } from 'src/app/shared/validators/whitespace.validator';
 
 @Component({
   selector: 'app-login-form',
@@ -14,46 +15,53 @@ export class LoginFormComponent {
   private builder = inject(NonNullableFormBuilder);
   private toast = inject(ToastrService);
   form = this.createForm();
-  userdata: any; // this.authService.userdata$;
+  userdata!: User;
 
   private createForm() {
     return this.builder.group({
-      email: this.builder.control('', {
-        validators: [
-          Validators.required,
-          Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
-        ],
-      }),
-      password: this.builder.control('', {
-        validators: [
-          Validators.required,
-          Validators.minLength(4),
-          Validators.maxLength(25),
-        ],
-      }),
+      email: this.builder.control('', [
+        whitespaceValidator,
+        Validators.required,
+        Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+      ]),
+      password: this.builder.control('', [
+        whitespaceValidator,
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(25),
+      ]),
     });
-  }
-
-  get emailCtrl() {
-    return this.form.controls.email;
-  }
-
-  get passwordCtrl() {
-    return this.form.controls.password;
   }
 
   getEmailSuccessMessage() {
     return 'great!';
   }
 
-  getEmailErrorMessage() {
-    if (this.emailCtrl.hasError('required')) {
+  getLoginErrorMessage(formControlName: 'email' | 'password') {
+    const control = this.form.get(formControlName);
+
+    if (control?.hasError('required')) {
       return 'To pole jest obowiązkowe';
     }
-    return this.emailCtrl.hasError('email') ? 'Nieprawidłowy adres email' : '';
-  }
 
-  // value -
+    if (control?.hasError('pattern')) {
+      return 'Pole zawiera niepoprawne znaki';
+    }
+
+    if (control?.hasError('whitespace')) {
+      return 'Pole nie moze zawierac spacji';
+    }
+
+    if (control?.hasError('minLenght')) {
+      return 'Pole musi zawierac conajmniej 4 znaki';
+    }
+
+    if (control?.hasError('maxLenght')) {
+      return 'Pole nie może zawierać wiecej niż 25 znaków';
+    }
+
+    return '';
+  }
 
   proceedLogin() {
     console.log(this.form.getRawValue().email);
@@ -61,21 +69,19 @@ export class LoginFormComponent {
       return;
     }
 
-    // if (this.form.valid) {
     this.authService
       .getUserDataById(this.form.getRawValue().email)
       .subscribe((res) => {
         this.userdata = res;
         if (this.userdata.password === this.form.value.password) {
-          localStorage.setItem('userId', this.userdata.id);
-          localStorage.setItem('userName', this.userdata.name);
-          localStorage.setItem('userRole', this.userdata.role);
+          localStorage.setItem('userId', this.userdata.id!);
+          localStorage.setItem('userName', this.userdata.name!);
+          localStorage.setItem('userRole', this.userdata.role!);
           this.authService.login(this.userdata);
           this.toast.success(`Zostałes zalogowany jako ${this.userdata.name}`);
         } else {
           this.toast.error('Błędne hasło. Spróbuj ponowanie');
         }
       });
-    // }
   }
 }

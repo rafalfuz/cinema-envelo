@@ -17,5 +17,6 @@ import { MovieReducer } from './store/admin.reducer';
       },
     ]),
   ],
+  declarations: [],
 })
 export default class OrderModule {}

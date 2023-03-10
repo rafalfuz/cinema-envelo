@@ -15,6 +15,6 @@ export class MovieService {
   }
 
   addMovie(movie: Movies) {
-    return this.http.post<Movies>(`${this.url}/movies`, movie);
+    return this.http.post<Movies>(`${this.url}`, movie);
   }
 }

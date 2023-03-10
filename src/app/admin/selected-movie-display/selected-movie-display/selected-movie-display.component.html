@@ -1,0 +1,46 @@
+<div>
+  Wybrany film:
+  <div>PLAKAT</div>
+  <h2>Penetratore 2</h2>
+  <h2>
+    When mankind rises from the ashes of the nuclear fire, the struggle to
+    overcome the tyranny of the machine and regenerate the human race will rage
+    for decades. But, the final will be fought here; in our present. Tonight
+  </h2>
+  <h2>Kategoria</h2>
+  <h2>60min</h2>
+  <h3>Kategori wiekowa</h3>
+  <p>Lista seansow</p>
+  <ol>
+    <li>
+      <p>tytul</p>
+      <p>Dzien</p>
+      <p>godzina</p>
+    </li>
+  </ol>
+  <form [formGroup]="formToAddToRepertuare" (ngSubmit)="addScreening()">
+    <mat-form-field
+      class="orderer-name-input orderer-name-input-name"
+      appearance="outline"
+    >
+      <mat-label>Id</mat-label>
+      <input matInput placeholder="ID*" formControlName="dayOfScreening" />
+    </mat-form-field>
+
+    <mat-form-field
+      class="orderer-name-input orderer-name-input-name"
+      appearance="outline"
+    >
+      <mat-label>Tytul</mat-label>
+      <input matInput placeholder="Tytuł*" formControlName="startTime" />
+    </mat-form-field>
+
+    <mat-form-field
+      class="orderer-name-input orderer-name-input-name"
+      appearance="outline"
+    >
+      <mat-label>YouTube id</mat-label>
+      <input matInput placeholder="ViedoId" formControlName="room" />
+    </mat-form-field>
+  </form>
+</div>

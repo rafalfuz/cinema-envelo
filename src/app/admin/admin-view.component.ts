@@ -10,11 +10,13 @@ import { Store } from '@ngrx/store';
 import { selectMovies } from './store/admin.selectors';
 import { AsyncPipe, JsonPipe, NgFor, NgForOf } from '@angular/common';
 import { MovieActions } from './store/admin.actions';
+import { SelectedMovieDisplayComponent } from './selected-movie-display/selected-movie-display/selected-movie-display.component';
 
 @Component({
   standalone: true,
   imports: [
     AddMovieFormComponent,
+    SelectedMovieDisplayComponent,
     MatButtonModule,
     MatFormFieldModule,
     MatSelectModule,
@@ -31,6 +33,7 @@ export class AdminViewComponent {
   private store = inject(Store);
 
   movies$ = this.store.select(selectMovies);
+
   openDialog() {
     this.dialog.open(AddMovieFormComponent);
   }

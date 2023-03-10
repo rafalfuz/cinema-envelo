@@ -1,118 +1,106 @@
+import { ToastrService } from 'ngx-toastr';
+import { whitespaceValidator } from 'src/app/shared/validators/whitespace.validator';
 import { Component, inject } from '@angular/core';
 import { NonNullableFormBuilder, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import patterns from 'src/app/shared/validators/paterns';
+import { NgIf } from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'app-order-form',
   templateUrl: './order-form.component.html',
   styleUrls: ['./order-form.component.css'],
-  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule],
+  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, NgIf],
 })
 export class OrderFormComponent {
-  private formBuilder = inject(NonNullableFormBuilder);
-  orderTicketsForm = this.orderTicketsFormGroup();
+  private builder = inject(NonNullableFormBuilder);
+  private toast = inject(ToastrService);
+  form = this.createForm();
 
-  private orderTicketsFormGroup() {
-    return this.formBuilder.group({
-      name: this.formBuilder.control('', {
-        validators: [
-          Validators.required,
-          Validators.maxLength(30),
-          Validators.pattern(patterns.nosigns),
-        ],
-      }),
-      surname: this.formBuilder.control('', {
-        validators: [
-          Validators.required,
-          Validators.maxLength(30),
-          Validators.pattern(patterns.nosigns),
-        ],
-      }),
-      phoneNumber: this.formBuilder.control('', {
-        validators: [
-          Validators.minLength(9),
-          Validators.maxLength(30),
-          Validators.pattern(patterns.phone),
-        ],
-      }),
-      email: this.formBuilder.control('', {
-        validators: [
-          Validators.required,
-          Validators.maxLength(50),
-          Validators.pattern(patterns.email),
-        ],
-      }),
-      emailRepeat: this.formBuilder.control('', {
-        validators: [
-          Validators.required,
-          Validators.maxLength(50),
-          Validators.pattern(patterns.email),
-        ],
-      }),
-      newsletterToggler: this.formBuilder.control(false, {
-        validators: [],
-      }),
-      promo: this.formBuilder.control('', {
-        validators: [],
-      }),
+  private createForm() {
+    return this.builder.group({
+      name: this.builder.control('', [
+        whitespaceValidator,
+        Validators.required,
+        Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+      ]),
+      surname: this.builder.control('', [
+        whitespaceValidator,
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(25),
+      ]),
+      phoneNumber: this.builder.control('', [
+        whitespaceValidator,
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(25),
+      ]),
+      email: this.builder.control('', [
+        whitespaceValidator,
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(25),
+      ]),
+      emailRepeat: this.builder.control('', [
+        whitespaceValidator,
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(25),
+      ]),
+      newsletterToggler: this.builder.control('', [
+        whitespaceValidator,
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(25),
+      ]),
+      promo: this.builder.control('', [
+        whitespaceValidator,
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(25),
+      ]),
     });
   }
 
-  get nameCtrl() {
-    return this.orderTicketsForm.controls.name;
+  getEmailSuccessMessage() {
+    return 'great!';
   }
 
-  getNameErrorMessage() {
-    this.nameCtrl.hasError('required');
-    return 'To pole jest wymagane';
-  }
+  getOrderErrorMessage(
+    formControlName:
+      | 'name'
+      | 'surname'
+      | 'phoneNumber'
+      | 'email'
+      | 'emailRepeat'
+      | 'newsletterToggler'
+      | 'promo'
+  ) {
+    const control = this.form.get(formControlName);
 
-  get surNameCtrl() {
-    return this.orderTicketsForm.controls.surname;
-  }
+    if (control?.hasError('required')) {
+      return 'To pole jest obowiązkowe';
+    }
 
-  getSurNameErrorMessage() {
-    this.nameCtrl.hasError('required');
-    return 'To pole jest wymagane';
-  }
+    if (control?.hasError('pattern')) {
+      return 'Pole zawiera niepoprawne znaki';
+    }
 
-  get phoneNumberCtrl() {
-    return this.orderTicketsForm.controls.phoneNumber;
-  }
+    if (control?.hasError('whitespace')) {
+      return 'Pole nie moze zawierac spacji';
+    }
 
-  getPhoneNumberErrorMessage() {
-    this.phoneNumberCtrl.hasError('required');
-    return 'To pole jest wymagane';
-  }
+    if (control?.hasError('minLenght')) {
+      return 'Pole musi zawierac conajmniej 4 znaki';
+    }
 
-  get emailCtrl() {
-    return this.orderTicketsForm.controls.email;
-  }
+    if (control?.hasError('maxLenght')) {
+      return 'Pole nie może zawierać wiecej niż 25 znaków';
+    }
 
-  getEmailErrorMessage() {
-    this.emailCtrl.hasError('required');
-    return 'To pole jest wymagane';
-  }
-
-  get emailRepeatCtrl() {
-    return this.orderTicketsForm.controls.emailRepeat;
-  }
-
-  getEmailRepeatErrorMessage() {
-    this.emailRepeatCtrl.hasError('required');
-    return 'To pole jest wymagane';
-  }
-
-  get promoCtrl() {
-    return this.orderTicketsForm.controls.emailRepeat;
-  }
-
-  getPromoCtrlErrorMessage() {
-    this.emailRepeatCtrl.hasError('required');
-    return 'To pole jest wymagane';
+    return '';
   }
 }

@@ -1,8 +1,7 @@
-import { AbstractControl, ValidatorFn } from '@angular/forms';
+import { AbstractControl } from '@angular/forms';
 
-export const whiteSpaceValidator: ValidatorFn = (control: AbstractControl) => {
-  if (control.value && control.value.trim().length === 0) {
-    return { whitespace: true };
-  }
-  return null;
-};
+export function whitespaceValidator(control: AbstractControl) {
+  const whitespaceRegex = /\s/g;
+  const isValid = !whitespaceRegex.test(control.value);
+  return isValid ? null : { whitespace: true };
+}

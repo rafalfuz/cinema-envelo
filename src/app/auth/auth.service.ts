@@ -40,7 +40,7 @@ export class AuthService {
   }
 
   getUserDataById(id: string) {
-    return this.http.get(this.apiurl + '/' + id);
+    return this.http.get<User>(this.apiurl + '/' + id);
   }
 
   getConfirm(): { hasAuth: boolean } {
@@ -50,7 +50,9 @@ export class AuthService {
   login(user: User) {
     this.confirm$$.next({ hasAuth: true });
     this.user$$.next(user);
-    this.router.navigate(['']);
+    if (user.role === 'admin') {
+      this.router.navigate(['/admin']);
+    } else this.router.navigate(['']);
   }
 
   autoLogin() {

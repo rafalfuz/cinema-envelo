@@ -8,7 +8,7 @@ import { TicketInfo } from '../order.interface';
 })
 export class TicketsApiService {
   private http = inject(HttpClient);
-  apiUrl = 'http://localhost:3000/ticketInfo/';
+  apiUrl = 'http://localhost:3000/ticketInfo';
 
   fetchTickets(): Observable<TicketInfo[]> {
     return this.http.get<TicketInfo[]>(`${this.apiUrl}`);

@@ -10,8 +10,8 @@
           placeholder="zaloguj@gmail.com"
           formControlName="email"
         />
-        <mat-error *ngIf="emailCtrl.invalid">{{
-          getEmailErrorMessage()
+        <mat-error *ngIf="getLoginErrorMessage('email') as message">{{
+          message
         }}</mat-error>
       </mat-form-field>
       <mat-form-field appearance="fill">
@@ -22,8 +22,8 @@
           placeholder="Hasło"
           formControlName="password"
         />
-        <mat-error *ngIf="emailCtrl.invalid">{{
-          "Wpisz haslo jeszcze raz"
+        <mat-error *ngIf="getLoginErrorMessage('password') as message">{{
+          message
         }}</mat-error>
       </mat-form-field>
       <button type="submit" mat-raised-button color="primary">Zaloguj</button>
