@@ -15,7 +15,6 @@ export const MovieActions = createActionGroup({
   events: {
     'get movies': emptyProps(),
     'add movie': props<{ movies: Movies }>(),
-    // 'get repertuare': props<{ movieId: string }>(),
     'get repertuare': props<{ movieId: string }>(),
     'get rooms': emptyProps(),
     'add wizard record': props<{

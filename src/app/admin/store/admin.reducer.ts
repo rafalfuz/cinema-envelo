@@ -26,5 +26,9 @@ export const MovieReducer = createReducer(
   on(MovieApiActions.getRoomsSuccess, (state, { RoomData }) => ({
     ...state,
     rooms: RoomData,
+  })),
+
+  on(MovieApiActions.addWizardRecordSuccess, (state, {}) => ({
+    ...state,
   }))
 );
