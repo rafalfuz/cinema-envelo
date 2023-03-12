@@ -2,12 +2,15 @@
   <h4>Wybierz film</h4>
   <mat-form-field appearance="fill">
     <mat-label>Select movie</mat-label>
-    <mat-select>
+    <mat-select (selectionChange)="selectedMovie($event.value.id)">
       <mat-option *ngFor="let movie of movies$ | async" [value]="movie">
         {{ movie.title }}
       </mat-option>
     </mat-select>
   </mat-form-field>
 </form>
-<app-selected-movie-display></app-selected-movie-display>
-<button mat-fab (click)="openDialog()">Open dialog</button>
+<app-selected-movie-display
+  [selected$]="repertuare$"
+  [rooms$]="rooms$"
+></app-selected-movie-display>
+<button mat-fab (click)="openDialog()">Dodaj film</button>

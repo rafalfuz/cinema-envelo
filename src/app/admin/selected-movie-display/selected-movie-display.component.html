@@ -1,0 +1,65 @@
+<div *ngIf="selected$ | async as record" class="wrapper">
+  <ng-container *ngIf="record.length; else empty">
+    <div class="selected-movie">
+      <div
+        class="photo-wrapper"
+        [ngStyle]="{ 'background-image': 'url(' + record[0].movie.image + ')' }"
+      ></div>
+      <div class="movie-details">
+        <p class="title">{{ record[0].movie.title }}</p>
+        <p class="description">{{ record[0].movie.descriptionShort }}</p>
+        <p class="genre">{{ record[0].movie.genre }}</p>
+        <p class="duration">{{ record[0].movie.runTime }}</p>
+        <p class="pg">{{ record[0].movie.pg }}</p>
+      </div>
+    </div>
+
+    <h2>Lista seansow</h2>
+
+    <div *ngFor="let record of record">
+      <p>{{ record.day }}</p>
+      <ol>
+        <li *ngFor="let hour of record.hours">
+          <p>{{ hour.time }}</p>
+          <p>{{ hour.roomId }}</p>
+        </li>
+      </ol>
+    </div>
+    <form
+      [formGroup]="formToAddToRepertuare"
+      (ngSubmit)="sendFormToRepertuar(record)"
+    >
+      <mat-form-field
+        class="orderer-name-input orderer-name-input-name"
+        appearance="outline"
+      >
+        <mat-label>Wybierz dzień</mat-label>
+        <input matInput placeholder="Dzień" formControlName="dayOfScreening" />
+      </mat-form-field>
+
+      <mat-form-field
+        class="orderer-name-input orderer-name-input-name"
+        appearance="outline"
+      >
+        <mat-label>Wybierz godzinę rozpoczęcia</mat-label>
+        <input
+          matInput
+          placeholder="Godzina rozpoczącia"
+          formControlName="startTime"
+        />
+      </mat-form-field>
+      <mat-select formControlName="room">
+        <mat-option *ngFor="let room of rooms$ | async" [value]="room">
+          {{ room.name }}
+        </mat-option>
+      </mat-select>
+      <button>Wyslij!</button>
+    </form>
+  </ng-container>
+  <ng-template #empty>
+    <h1>
+      Jako admin mozesz dodać film do bazy danych, wypełniając formularz. Możesz
+      również dodać film do repertuaru wybierajać go z listy filmów
+    </h1>
+  </ng-template>
+</div>

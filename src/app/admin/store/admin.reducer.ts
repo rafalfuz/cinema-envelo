@@ -16,5 +16,15 @@ export const MovieReducer = createReducer(
     const createNewArr = [...state.movies, movie];
 
     return { ...state, movies: createNewArr };
-  })
+  }),
+
+  on(MovieApiActions.getRepertuareSuccess, (state, { RepertuareData }) => ({
+    ...state,
+    repertuare: RepertuareData,
+  })),
+
+  on(MovieApiActions.getRoomsSuccess, (state, { RoomData }) => ({
+    ...state,
+    rooms: RoomData,
+  }))
 );

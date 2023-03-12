@@ -5,12 +5,16 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AddMovieFormComponent } from './add-movie-form/add-movie-form.component';
 import { MatSelectModule } from '@angular/material/select';
-import { MovieService } from './store/admin-movie.service';
 import { Store } from '@ngrx/store';
-import { selectMovies } from './store/admin.selectors';
-import { AsyncPipe, JsonPipe, NgFor, NgForOf } from '@angular/common';
-import { MovieActions } from './store/admin.actions';
-import { SelectedMovieDisplayComponent } from './selected-movie-display/selected-movie-display/selected-movie-display.component';
+import {
+  selectMovies,
+  selectRepertuareRecord,
+  selectRooms,
+} from './store/admin.selectors';
+import { AsyncPipe, JsonPipe, NgForOf } from '@angular/common';
+import { MovieActions, MovieApiActions } from './store/admin.actions';
+import { SelectedMovieDisplayComponent } from './selected-movie-display/selected-movie-display.component';
+import { Movies } from '../movies/movies.interface';
 
 @Component({
   standalone: true,
@@ -31,14 +35,19 @@ import { SelectedMovieDisplayComponent } from './selected-movie-display/selected
 export class AdminViewComponent {
   public dialog = inject(MatDialog);
   private store = inject(Store);
-
   movies$ = this.store.select(selectMovies);
-
+  repertuare$ = this.store.select(selectRepertuareRecord);
+  rooms$ = this.store.select(selectRooms);
   openDialog() {
     this.dialog.open(AddMovieFormComponent);
   }
 
   ngOnInit() {
     this.store.dispatch(MovieActions.getMovies());
+    this.store.dispatch(MovieActions.getRooms());
+  }
+
+  selectedMovie(id: string) {
+    this.store.dispatch(MovieActions.getRepertuare({ movieId: id }));
   }
 }

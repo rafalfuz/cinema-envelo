@@ -21,11 +21,6 @@
   ],
   "watchList": [
     {
-      "id": 1678027369499,
-      "idUser": "izakrzan@onlyfans.com",
-      "movie": "penettator"
-    },
-    {
       "id": 1678353781783,
       "idUser": "izakrzan@onlyfans.com",
       "movie": "spider-man-into-the-spider-verse"
@@ -70,11 +65,7 @@
   ],
   "repertoire": {
     "movieId": "movie-7493-11ed-89ed-499bb1f405dc",
-    "hours": [
-      "13:00",
-      "15:00",
-      "18:00"
-    ],
+    "hours": ["13:00", "15:00", "18:00"],
     "day": "06-12-2022"
   },
   "ticketInfo": [
@@ -153,21 +144,6 @@
       "cast": "Hailee Steinfeld, Kevin Alejando, Jason Spisak"
     },
     {
-      "id": "penetratore",
-      "title": "Avengers: Endgame",
-      "videoId": "TcMBFSGVi1c",
-      "image": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_FMjpg_UX1000_.jpg",
-      "descriptionShort": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
-      "rating": 8,
-      "votesNumber": 432,
-      "premiere": true,
-      "runTime": 181,
-      "pg": 13,
-      "genre": "Sci-Fi, Action",
-      "day:": "06-12-2022",
-      "cast": "Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth, Scarlett Johansson, Jeremy Renner, Paul Rudd, Brie Larson, Bradley Cooper, Benedict Cumberbatch, Elizabeth Olsen❤, Tom Holland, Zoe Saldana, "
-    },
-    {
       "id": "penetratore-2",
       "title": "Penetratore 2",
       "videoId": "o1eM_zNjJ64",
@@ -185,6 +161,7 @@
   ],
   "reperoire": [
     {
+      "id": 1,
       "movie": {
         "id": "avengers-endgame",
         "title": "Avengers: Endgame",
@@ -217,6 +194,7 @@
       ]
     },
     {
+      "id": 2,
       "movie": {
         "id": "avengers-endgame",
         "title": "Avengers: Endgame",
@@ -249,6 +227,7 @@
       ]
     },
     {
+      "id": 3,
       "movie": {
         "id": "spider-man-into-the-spider-verse",
         "title": "Spider-Man: Into the Spider-Verse",
@@ -281,6 +260,7 @@
       ]
     },
     {
+      "id": 4,
       "movie": {
         "id": "top-gun-maverick",
         "title": "Top Gun: Maverick",
@@ -318,6 +298,7 @@
       ]
     },
     {
+      "id": 5,
       "movie": {
         "id": "top-gun-maverick",
         "title": "Top Gun: Maverick",
@@ -350,6 +331,7 @@
       ]
     },
     {
+      "id": 6,
       "movie": {
         "id": "avengers-endgame",
         "title": "Avengers: Endgame",
@@ -382,6 +364,7 @@
       ]
     },
     {
+      "id": 7,
       "movie": {
         "id": "spider-man-into-the-spider-verse",
         "title": "Spider-Man: Into the Spider-Verse",
@@ -419,6 +402,7 @@
       ]
     },
     {
+      "id": 8,
       "movie": {
         "id": "top-gun-maverick",
         "title": "Top Gun: Maverick",
@@ -451,6 +435,7 @@
       ]
     },
     {
+      "id": 9,
       "movie": {
         "id": "avengers-endgame",
         "title": "Avengers: Endgame",
@@ -483,6 +468,7 @@
       ]
     },
     {
+      "id": 10,
       "movie": {
         "id": "spider-man-into-the-spider-verse",
         "title": "Spider-Man: Into the Spider-Verse",
@@ -520,6 +506,7 @@
       ]
     },
     {
+      "id": 11,
       "movie": {
         "id": "arcane-league-of-legends",
         "title": "Arcane",
@@ -550,6 +537,92 @@
           "showingId": "10-12-22-20-00-zanzibar-arcane-league-of-legends"
         }
       ]
+    },
+    {
+      "id": 12,
+      "movie": {
+        "id": "avengers-endgame",
+        "title": "Avengers: Endgame",
+        "image": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_FMjpg_UX1000_.jpg",
+        "descriptionShort": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
+        "rating": 8,
+        "votesNumber": 432,
+        "premiere": true,
+        "runTime": 181,
+        "pg": 13,
+        "genre": "Sci-Fi"
+      },
+      "day": "09-12-2022",
+      "hours": [
+        {
+          "time": "15:00",
+          "roomId": "sala1",
+          "showingId": "09-12-22-15-00-niagara-avengers-endgame"
+        },
+        {
+          "time": "17:00",
+          "roomId": "sala1",
+          "showingId": "09-12-22-17-00-niagara-avengers-endgame"
+        },
+        {
+          "time": "20:00",
+          "roomId": "sala1",
+          "showingId": "09-12-22-20-00-niagara-avengers-endgame"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "movie": {
+        "id": "avengers-endgame",
+        "title": "Avengers: Endgame",
+        "image": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_FMjpg_UX1000_.jpg",
+        "descriptionShort": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
+        "rating": 8,
+        "votesNumber": 432,
+        "premiere": true,
+        "runTime": 181,
+        "pg": 13,
+        "genre": "Sci-Fi"
+      },
+      "day": "11-12-2022",
+      "hours": [
+        {
+          "time": "15:00",
+          "roomId": "sala1",
+          "showingId": "09-12-22-15-00-niagara-avengers-endgame"
+        },
+        {
+          "time": "17:00",
+          "roomId": "sala1",
+          "showingId": "09-12-22-17-00-niagara-avengers-endgame"
+        },
+        {
+          "time": "20:00",
+          "roomId": "sala1",
+          "showingId": "09-12-22-20-00-niagara-avengers-endgame"
+        }
+      ]
+    },
+    {
+      "movies": {
+        "id": "penetratore-2",
+        "title": "Penetratore 2",
+        "videoId": "o1eM_zNjJ64",
+        "image": "https://www.themoviedb.org/t/p/w1280/hfb6sMnCtFoGjguf7GNaMh0FD14.jpg",
+        "descriptionShort": "When mankind rises from the ashes of the nuclear fire, the struggle to overcome the tyranny of the machine and regenerate the human race will rage for decades. But, the final will be fought here; in our present. Tonight!",
+        "rating": 10,
+        "votesNumber": 11000000,
+        "premiere": false,
+        "runTime": 0,
+        "pg": 18,
+        "genre": "Action",
+        "day": "11-12-2022",
+        "cast": "Woody Long, Ron Jeremy, Angela Summers"
+      },
+      "day": "",
+      "hours": [],
+      "id": 14
     }
   ],
   "showings": [

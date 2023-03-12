@@ -1,0 +1,39 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.photo-wrapper {
+  flex-basis: 40%;
+}
+.image {
+  max-width: 70%;
+  max-height: 100%;
+}
+.selected-movie {
+  width: 60%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  padding: 10px;
+}
+.movie-details {
+  flex-basis: 60%;
+  padding: 20px;
+}
+
+p {
+  margin: 10px auto;
+}
+
+.title {
+  font-size: 52px;
+}
+
+.description {
+  font-size: 22px;
+}

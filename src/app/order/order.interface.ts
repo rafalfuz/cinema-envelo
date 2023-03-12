@@ -1,7 +1,7 @@
 import { Movie } from '../movies/movies.interface';
 
 export interface Room {
-  id: number;
+  id: string;
   name: string;
   rows: number;
   columns: number;
@@ -60,4 +60,13 @@ export interface Reservation {
   row: string;
   column: number;
   user: string;
+}
+
+export interface ShowingRecord {
+  id: string;
+  roomId: string;
+  movieId: string;
+  time: string;
+  day: string;
+  soldSeats: [];
 }
