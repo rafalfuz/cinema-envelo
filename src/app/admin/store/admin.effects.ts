@@ -39,7 +39,7 @@ export class AdminEffects {
       ofType(MovieActions.addMovie), /// najpierw wybiera sie akcje
       switchMap(({ movies }) => {
         const objectX = {
-          movies: movies,
+          movie: movies,
           day: '',
           hours: [],
         };

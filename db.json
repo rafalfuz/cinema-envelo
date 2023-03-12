@@ -65,7 +65,11 @@
   ],
   "repertoire": {
     "movieId": "movie-7493-11ed-89ed-499bb1f405dc",
-    "hours": ["13:00", "15:00", "18:00"],
+    "hours": [
+      "13:00",
+      "15:00",
+      "18:00"
+    ],
     "day": "06-12-2022"
   },
   "ticketInfo": [
@@ -605,7 +609,7 @@
       ]
     },
     {
-      "movies": {
+      "movie": {
         "id": "penetratore-2",
         "title": "Penetratore 2",
         "videoId": "o1eM_zNjJ64",
@@ -623,6 +627,78 @@
       "day": "",
       "hours": [],
       "id": 14
+    },
+    {
+      "movie": {
+        "id": "penetratore-2",
+        "title": "Penetratore 2",
+        "videoId": "o1eM_zNjJ64",
+        "image": "https://www.themoviedb.org/t/p/w1280/hfb6sMnCtFoGjguf7GNaMh0FD14.jpg",
+        "descriptionShort": "When mankind rises from the ashes of the nuclear fire, the struggle to overcome the tyranny of the machine and regenerate the human race will rage for decades. But, the final will be fought here; in our present. Tonight!",
+        "rating": 10,
+        "votesNumber": 11000000,
+        "premiere": false,
+        "runTime": 0,
+        "pg": 18,
+        "genre": "Action",
+        "day": "11-12-2022",
+        "cast": "Woody Long, Ron Jeremy, Angela Summers"
+      },
+      "day": "",
+      "hours": [],
+      "id": 15
+    },
+    {
+      "movie": {
+        "id": "penetratore-2",
+        "title": "Penetratore 2",
+        "videoId": "o1eM_zNjJ64",
+        "image": "https://www.themoviedb.org/t/p/w1280/hfb6sMnCtFoGjguf7GNaMh0FD14.jpg",
+        "descriptionShort": "When mankind rises from the ashes of the nuclear fire, the struggle to overcome the tyranny of the machine and regenerate the human race will rage for decades. But, the final will be fought here; in our present. Tonight!",
+        "rating": 10,
+        "votesNumber": 11000000,
+        "premiere": false,
+        "runTime": 0,
+        "pg": 18,
+        "genre": "Action",
+        "day": "11-12-2022",
+        "cast": "Woody Long, Ron Jeremy, Angela Summers"
+      },
+      "day": "12-12-2022",
+      "hours": [
+        {
+          "time": "14:00",
+          "roomId": "sala1",
+          "showingId": "12-12-22-14-00-niagara-penetratore-2"
+        }
+      ],
+      "id": 16
+    },
+    {
+      "movie": {
+        "id": "penetratore-2",
+        "title": "Penetratore 2",
+        "videoId": "o1eM_zNjJ64",
+        "image": "https://www.themoviedb.org/t/p/w1280/hfb6sMnCtFoGjguf7GNaMh0FD14.jpg",
+        "descriptionShort": "When mankind rises from the ashes of the nuclear fire, the struggle to overcome the tyranny of the machine and regenerate the human race will rage for decades. But, the final will be fought here; in our present. Tonight!",
+        "rating": 10,
+        "votesNumber": 11000000,
+        "premiere": false,
+        "runTime": 0,
+        "pg": 18,
+        "genre": "Action",
+        "day": "11-12-2022",
+        "cast": "Woody Long, Ron Jeremy, Angela Summers"
+      },
+      "day": "12-12-2022",
+      "hours": [
+        {
+          "time": "17:00",
+          "roomId": "sala2",
+          "showingId": "12-12-22-17-00-zanzibar-penetratore-2"
+        }
+      ],
+      "id": 17
     }
   ],
   "showings": [
@@ -1014,6 +1090,22 @@
       "time": "20:00",
       "day": "12-12-2022",
       "soldSeats": []
+    },
+    {
+      "id": "12-12-22-14-00-niagara-penetratore-2",
+      "roomId": "sala1",
+      "movieId": "penetratore-2",
+      "time": "14:00",
+      "day": "12-12-2022",
+      "soldSeats": []
+    },
+    {
+      "id": "12-12-22-17-00-zanzibar-penetratore-2",
+      "roomId": "sala2",
+      "movieId": "penetratore-2",
+      "time": "17:00",
+      "day": "12-12-2022",
+      "soldSeats": []
     }
   ],
   "selectedSeats": [
@@ -1046,88 +1138,18 @@
       "user": "rafalfuz@gmail.com"
     },
     {
-      "id": "2023-03-09T09:19:35.344Z",
-      "showingId": "07-12-22-15-00-niagara-top-gun-maverick",
+      "showingId": "06-12-22-20-00-niagara-avengers-endgame",
       "row": "C",
-      "column": 5,
-      "user": "izakrzan@onlyfans.com"
-    },
-    {
-      "id": "2023-03-09T09:20:40.776Z",
-      "showingId": "07-12-22-15-00-niagara-top-gun-maverick",
-      "row": "F",
-      "column": 13,
-      "user": "izakrzan@onlyfans.com"
-    },
-    {
-      "id": "2023-03-09T09:21:46.684Z",
-      "showingId": "06-12-22-17-00-niagara-avengers-endgame",
-      "row": "C",
-      "column": 14,
-      "user": "izakrzan@onlyfans.com"
-    },
-    {
-      "id": "2023-03-09T10:10:35.379Z",
-      "showingId": "07-12-22-15-00-niagara-top-gun-maverick",
-      "row": "D",
-      "column": 7,
-      "user": "admin@alekino.com"
-    },
-    {
-      "id": "2023-03-09T10:10:38.776Z",
-      "showingId": "07-12-22-15-00-niagara-top-gun-maverick",
-      "row": "F",
-      "column": 10,
-      "user": "admin@alekino.com"
-    },
-    {
-      "id": "2023-03-09T15:12:32.085Z",
-      "showingId": "06-12-22-15-00-niagara-avengers-endgame",
-      "row": "G",
-      "column": 10,
-      "user": "izakrzan@onlyfans.com"
-    },
-    {
-      "id": "2023-03-10T13:23:08.978Z",
-      "showingId": "06-12-22-17-00-niagara-avengers-endgame",
-      "row": "C",
-      "column": 14,
-      "user": "izakrzan@onlyfans.com"
-    },
-    {
-      "id": "2023-03-10T13:23:09.470Z",
-      "showingId": "06-12-22-17-00-niagara-avengers-endgame",
-      "row": "C",
-      "column": 14,
-      "user": "izakrzan@onlyfans.com"
-    },
-    {
-      "id": "2023-03-10T13:23:09.905Z",
-      "showingId": "06-12-22-17-00-niagara-avengers-endgame",
-      "row": "C",
-      "column": 14,
-      "user": "izakrzan@onlyfans.com"
-    },
-    {
-      "id": "2023-03-10T13:23:10.320Z",
-      "showingId": "06-12-22-17-00-niagara-avengers-endgame",
-      "row": "C",
-      "column": 14,
-      "user": "izakrzan@onlyfans.com"
-    },
-    {
-      "id": "2023-03-10T13:23:13.018Z",
-      "showingId": "06-12-22-17-00-niagara-avengers-endgame",
-      "row": "D",
-      "column": 7,
-      "user": "izakrzan@onlyfans.com"
-    },
-    {
-      "id": "2023-03-10T13:23:21.231Z",
-      "showingId": "06-12-22-17-00-niagara-avengers-endgame",
-      "row": "D",
       "column": 9,
-      "user": "izakrzan@onlyfans.com"
+      "user": "rafalfuz@gmail.com",
+      "id": 5
+    },
+    {
+      "showingId": "12-12-22-14-00-niagara-penetratore-2",
+      "row": "C",
+      "column": 12,
+      "user": "admin@alekino.com",
+      "id": 6
     }
   ],
   "cinemaRooms": {

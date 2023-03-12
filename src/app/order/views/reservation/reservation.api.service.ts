@@ -28,7 +28,6 @@ export class ReservationApiService {
   ) {
     return this.http
       .post<Reservation>(`${this.url}`, {
-        id: new Date(),
         showingId,
         row,
         column,
