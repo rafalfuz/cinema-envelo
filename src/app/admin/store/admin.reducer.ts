@@ -4,7 +4,6 @@ import { MovieApiActions } from './admin.actions';
 import { initialMovieState } from './admin.state';
 
 export const MovieReducer = createReducer(
-  // sluzy do updateowania store
   initialMovieState,
   on(MovieApiActions.getMoviesSuccess, (state, { MovieData }) => ({
     ...state,
@@ -12,7 +11,6 @@ export const MovieReducer = createReducer(
   })),
 
   on(MovieApiActions.addMoviesSuccess, (state, { movie }) => {
-    // dodaje sie do store film
     const createNewArr = [...state.movies, movie];
 
     return { ...state, movies: createNewArr };
@@ -28,7 +26,12 @@ export const MovieReducer = createReducer(
     rooms: RoomData,
   })),
 
-  on(MovieApiActions.addWizardRecordSuccess, (state, {}) => ({
-    ...state,
-  }))
+  on(
+    MovieApiActions.addWizardRecordSuccess,
+    (state, { newRepertuareRecord }) => {
+      const createNewArr = [...state.repertuare, newRepertuareRecord];
+
+      return { ...state, repertuare: createNewArr };
+    }
+  )
 );

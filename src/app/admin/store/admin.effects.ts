@@ -143,8 +143,11 @@ export class AdminEffects {
           this.adminService.addToReperoireRecord(reperoire),
         ]);
       }),
-      map(() => {
-        return MovieApiActions.addWizardRecordSuccess();
+      map((data) => {
+        console.log(data);
+        return MovieApiActions.addWizardRecordSuccess({
+          newRepertuareRecord: data[1],
+        });
       }),
       catchError(() => {
         this.toast.error('wrong');

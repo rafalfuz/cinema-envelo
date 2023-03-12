@@ -14,7 +14,6 @@ import {
 import { AsyncPipe, JsonPipe, NgForOf } from '@angular/common';
 import { MovieActions, MovieApiActions } from './store/admin.actions';
 import { SelectedMovieDisplayComponent } from './selected-movie-display/selected-movie-display.component';
-import { Movies } from '../movies/movies.interface';
 
 @Component({
   standalone: true,
