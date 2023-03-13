@@ -570,17 +570,17 @@
         {
           "time": "15:00",
           "roomId": "sala1",
-          "showingId": "09-12-22-15-00-niagara-avengers-endgame"
+          "showingId": "11-12-22-15-00-niagara-avengers-endgame"
         },
         {
           "time": "17:00",
           "roomId": "sala1",
-          "showingId": "09-12-22-17-00-niagara-avengers-endgame"
+          "showingId": "11-12-22-17-00-niagara-avengers-endgame"
         },
         {
           "time": "20:00",
           "roomId": "sala1",
-          "showingId": "09-12-22-20-00-niagara-avengers-endgame"
+          "showingId": "11-12-22-20-00-niagara-avengers-endgame"
         }
       ]
     }
@@ -1008,19 +1008,43 @@
       "soldSeats": []
     },
     {
-      "id": "12-12-22-17-00-arcane-league-of-legends",
-      "roomId": "sala2",
-      "movieId": "arcane-league-of-legends",
+      "id": "12-12-22-17-00-niagara-avengers-endgame",
+      "roomId": "sala1",
+      "movieId": "avengers-endgame",
       "time": "17:00",
       "day": "12-12-2022",
       "soldSeats": []
     },
     {
-      "id": "12-12-22-20-00-akwarium-avengers-endgame",
+      "id": "12-12-22-20-00-zanzibar-avengers-endgame",
       "roomId": "sala3",
-      "movieId": "arcane-league-of-legends",
+      "movieId": "avengers-endgame",
       "time": "20:00",
       "day": "12-12-2022",
+      "soldSeats": []
+    },
+    {
+      "id": "11-12-22-15-00-niagara-avengers-endgame",
+      "roomId": "sala1",
+      "movieId": "avengers-endgame",
+      "time": "15:00",
+      "day": "11-12-2022",
+      "soldSeats": []
+    },
+    {
+      "id": "11-12-22-17-00-niagara-avengers-endgame",
+      "roomId": "sala1",
+      "movieId": "avengers-endgame",
+      "time": "17:00",
+      "day": "11-12-2022",
+      "soldSeats": []
+    },
+    {
+      "id": "11-12-22-20-00-niagara-avengers-endgame",
+      "roomId": "sala1",
+      "movieId": "avengers-endgame",
+      "time": "20:00",
+      "day": "11-12-2022",
       "soldSeats": []
     }
   ],
@@ -1059,13 +1083,6 @@
       "column": 9,
       "user": "rafalfuz@gmail.com",
       "id": 5
-    },
-    {
-      "showingId": "12-12-22-14-00-niagara-penetratore-2",
-      "row": "C",
-      "column": 12,
-      "user": "admin@alekino.com",
-      "id": 6
     },
     {
       "showingId": "10-12-22-15-00-niagara-arcane-league-of-legends",
