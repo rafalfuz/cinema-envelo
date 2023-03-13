@@ -8,11 +8,11 @@
   flex-basis: 40%;
 }
 .image {
-  max-width: 70%;
-  max-height: 100%;
+  max-width: 300px;
+  margin-left: 50px;
 }
 .selected-movie {
-  width: 60%;
+  width: 90%;
   height: 500px;
   display: flex;
   align-items: center;
@@ -24,6 +24,7 @@
 .movie-details {
   flex-basis: 60%;
   padding: 20px;
+  margin: 0 auto;
 }
 
 p {
@@ -35,5 +36,60 @@ p {
 }
 
 .description {
+  font-size: 22px;
+}
+
+.admin-info {
+  width: 750px;
+  padding: 50px;
+  text-align: justify;
+}
+
+.attributes {
+  display: flex;
+}
+
+h2 {
+  padding: 25px;
+}
+
+.records-list {
+  width: 600px;
+  height: 100px;
+  margin: 50px;
+}
+
+.record-item {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid white;
+}
+h1 {
+  padding: 30px;
+}
+.add-repertuare-form {
+  margin-top: 40px;
+  border: 1px solid white;
+  background-color: white;
+  color: black;
+  width: 600px;
+  height: 600px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-selector {
+  width: 400px;
+  margin: 20px;
+}
+
+.submitBtn {
+  width: 300px;
+  height: 50px;
   font-size: 22px;
 }

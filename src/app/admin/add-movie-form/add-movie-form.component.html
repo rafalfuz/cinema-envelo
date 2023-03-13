@@ -1,113 +1,116 @@
-<form [formGroup]="formToAddMovie" (ngSubmit)="onSubmit()" class="order-form">
-  <div class="orderer-name">
-    <mat-form-field
-      class="orderer-name-input orderer-name-input-name"
-      appearance="outline"
-    >
+<div class="wrapper">
+  <h1>Dodaj film do bazy danych</h1>
+  <form [formGroup]="formToAddMovie" (ngSubmit)="onSubmit()" class="order-form">
+    <mat-form-field appearance="outline" class="id input">
       <mat-label>Id</mat-label>
-      <input matInput placeholder="ID*" formControlName="id" />
+      <input matInput placeholder="Id*" formControlName="id" />
+      <mat-error *ngIf="getAddMovieErrorControlMessage('id') as message">{{
+        message
+      }}</mat-error>
     </mat-form-field>
 
-    <mat-form-field
-      class="orderer-name-input orderer-name-input-name"
-      appearance="outline"
-    >
+    <mat-form-field appearance="outline" class="title input">
       <mat-label>Tytul</mat-label>
       <input matInput placeholder="Tytuł*" formControlName="title" />
+      <mat-error *ngIf="getAddMovieErrorControlMessage('title') as message">{{
+        message
+      }}</mat-error>
     </mat-form-field>
 
-    <mat-form-field
-      class="orderer-name-input orderer-name-input-name"
-      appearance="outline"
-    >
+    <mat-form-field appearance="outline" class="videoId input">
       <mat-label>YouTube id</mat-label>
       <input matInput placeholder="ViedoId" formControlName="videoId" />
+      <mat-error *ngIf="getAddMovieErrorControlMessage('videoId') as message">{{
+        message
+      }}</mat-error>
     </mat-form-field>
 
-    <mat-form-field
-      class="orderer-name-input orderer-name-input-name"
-      appearance="outline"
-    >
+    <mat-form-field appearance="outline" class="image input">
       <mat-label>image</mat-label>
       <input matInput placeholder="Image" formControlName="image" />
+      <mat-error *ngIf="getAddMovieErrorControlMessage('image') as message">{{
+        message
+      }}</mat-error>
     </mat-form-field>
 
-    <mat-form-field
-      class="orderer-name-input orderer-name-input-name"
-      appearance="outline"
-    >
+    <mat-form-field appearance="outline" class="description textArea">
       <mat-label>Description</mat-label>
-      <input matInput placeholder="Opis" formControlName="descriptionShort" />
+      <textarea
+        matInput
+        formControlName="descriptionShort"
+        placeholder="Opis"
+      ></textarea>
+      <mat-error
+        *ngIf="getAddMovieErrorControlMessage('descriptionShort') as message"
+        >{{ message }}</mat-error
+      >
     </mat-form-field>
 
-    <mat-form-field
-      class="orderer-name-input orderer-name-input-name"
-      appearance="outline"
-    >
+    <mat-form-field appearance="outline" class="rate input">
       <mat-label>Ocena</mat-label>
       <input matInput placeholder="Ocena" formControlName="rating" />
     </mat-form-field>
 
-    <mat-form-field
-      class="orderer-name-input orderer-name-input-name"
-      appearance="outline"
-    >
-      <mat-label>Ilosc glosow</mat-label>
-      <input
-        matInput
-        placeholder="Ilosc glosow"
-        formControlName="votesNumber"
-      />
+    <mat-form-field appearance="outline" class="votes-number input">
+      <mat-label>Ilość głosujących</mat-label>
+      <input matInput placeholder="Ocena" formControlName="votesNumber" />
     </mat-form-field>
 
-    <mat-form-field
-      class="orderer-name-input orderer-name-input-name"
-      appearance="outline"
-    >
-      <mat-label>Premiera</mat-label>
-      <input matInput placeholder="Premiera" formControlName="premiere" />
-    </mat-form-field>
-
-    <mat-form-field
-      class="orderer-name-input orderer-name-input-name"
-      appearance="outline"
-    >
+    <mat-form-field appearance="outline" class="duration input">
       <mat-label>Czas trwania</mat-label>
-      <input matInput placeholder="Czas trwania" formControlName="runTime" />
+      <input
+        type="number"
+        matInput
+        placeholder="Czas trwania"
+        formControlName="runTime"
+      />
+      <mat-error *ngIf="getAddMovieErrorControlMessage('runTime') as message">{{
+        message
+      }}</mat-error>
     </mat-form-field>
 
-    <mat-form-field
-      class="orderer-name-input orderer-name-input-name"
-      appearance="outline"
-    >
+    <mat-form-field appearance="outline" class="pg input">
       <mat-label>Kategoria wiekowa</mat-label>
       <input matInput placeholder="Kategoria wiekwoa" formControlName="pg" />
+      <mat-error *ngIf="getAddMovieErrorControlMessage('pg') as message">{{
+        message
+      }}</mat-error>
     </mat-form-field>
 
-    <mat-form-field
-      class="orderer-name-input orderer-name-input-name"
-      appearance="outline"
-    >
+    <mat-form-field appearance="outline" class="genre input">
       <mat-label>Kategoria</mat-label>
       <input matInput placeholder="Kategoria*" formControlName="genre" />
+      <mat-error *ngIf="getAddMovieErrorControlMessage('genre') as message">{{
+        message
+      }}</mat-error>
     </mat-form-field>
 
-    <mat-form-field
-      class="orderer-name-input orderer-name-input-name"
-      appearance="outline"
-    >
+    <mat-form-field appearance="outline" class="day input">
       <mat-label>Dzień</mat-label>
-      <input matInput placeholder="Dzien" formControlName="day" />
+      <input matInput placeholder="Dzień" formControlName="day" />
+      <mat-error *ngIf="getAddMovieErrorControlMessage('day') as message">{{
+        message
+      }}</mat-error>
     </mat-form-field>
 
-    <mat-form-field
-      class="orderer-name-input orderer-name-input-name"
-      appearance="outline"
-    >
+    <mat-form-field appearance="outline" class="cast input">
       <mat-label>Obsada</mat-label>
       <input matInput placeholder="Obsada" formControlName="cast" />
+      <mat-error *ngIf="getAddMovieErrorControlMessage('cast') as message">{{
+        message
+      }}</mat-error>
     </mat-form-field>
-  </div>
-  <button type="submit">WYSLIJ</button>
-  <button type="button">ANULUJ</button>
-</form>
+
+    <mat-checkbox class="premiere" formControlName="premiere"
+      >Premiera</mat-checkbox
+    >
+
+    <button
+      [disabled]="!this.formToAddMovie.valid"
+      class="submitBtn"
+      mat-raised-button
+    >
+      DODAJ
+    </button>
+  </form>
+</div>

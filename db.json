@@ -63,15 +63,6 @@
     "11.12.2022",
     "12.12.2022"
   ],
-  "repertoire": {
-    "movieId": "movie-7493-11ed-89ed-499bb1f405dc",
-    "hours": [
-      "13:00",
-      "15:00",
-      "18:00"
-    ],
-    "day": "06-12-2022"
-  },
   "ticketInfo": [
     {
       "type": "normalny",
@@ -146,21 +137,6 @@
       "genre": "TV Series",
       "day:": "10-12-2022",
       "cast": "Hailee Steinfeld, Kevin Alejando, Jason Spisak"
-    },
-    {
-      "id": "penetratore-2",
-      "title": "Penetratore 2",
-      "videoId": "o1eM_zNjJ64",
-      "image": "https://www.themoviedb.org/t/p/w1280/hfb6sMnCtFoGjguf7GNaMh0FD14.jpg",
-      "descriptionShort": "When mankind rises from the ashes of the nuclear fire, the struggle to overcome the tyranny of the machine and regenerate the human race will rage for decades. But, the final will be fought here; in our present. Tonight!",
-      "rating": 10,
-      "votesNumber": 11000000,
-      "premiere": false,
-      "runTime": "100",
-      "pg": 18,
-      "genre": "Action",
-      "day": "11-12-2022",
-      "cast": "Woody Long, Ron Jeremy, Angela Summers"
     }
   ],
   "reperoire": [
@@ -607,147 +583,6 @@
           "showingId": "09-12-22-20-00-niagara-avengers-endgame"
         }
       ]
-    },
-    {
-      "movie": {
-        "id": "penetratore-2",
-        "title": "Penetratore 2",
-        "videoId": "o1eM_zNjJ64",
-        "image": "https://www.themoviedb.org/t/p/w1280/hfb6sMnCtFoGjguf7GNaMh0FD14.jpg",
-        "descriptionShort": "When mankind rises from the ashes of the nuclear fire, the struggle to overcome the tyranny of the machine and regenerate the human race will rage for decades. But, the final will be fought here; in our present. Tonight!",
-        "rating": 10,
-        "votesNumber": 11000000,
-        "premiere": false,
-        "runTime": "100",
-        "pg": 18,
-        "genre": "Action",
-        "day": "11-12-2022",
-        "cast": "Woody Long, Ron Jeremy, Angela Summers"
-      },
-      "day": "",
-      "hours": [],
-      "id": 14
-    },
-    {
-      "movie": {
-        "id": "penetratore-2",
-        "title": "Penetratore 2",
-        "videoId": "o1eM_zNjJ64",
-        "image": "https://www.themoviedb.org/t/p/w1280/hfb6sMnCtFoGjguf7GNaMh0FD14.jpg",
-        "descriptionShort": "When mankind rises from the ashes of the nuclear fire, the struggle to overcome the tyranny of the machine and regenerate the human race will rage for decades. But, the final will be fought here; in our present. Tonight!",
-        "rating": 10,
-        "votesNumber": 11000000,
-        "premiere": false,
-        "runTime": "100",
-        "pg": 18,
-        "genre": "Action",
-        "day": "11-12-2022",
-        "cast": "Woody Long, Ron Jeremy, Angela Summers"
-      },
-      "day": "12-12-2022",
-      "hours": [
-        {
-          "time": "10:00",
-          "roomId": "sala3",
-          "showingId": "12-12-22-10-00-akwarium-penetratore-2"
-        }
-      ],
-      "id": 15
-    },
-    {
-      "movie": {
-        "id": "penetratore-2",
-        "title": "Penetratore 2",
-        "videoId": "o1eM_zNjJ64",
-        "image": "https://www.themoviedb.org/t/p/w1280/hfb6sMnCtFoGjguf7GNaMh0FD14.jpg",
-        "descriptionShort": "When mankind rises from the ashes of the nuclear fire, the struggle to overcome the tyranny of the machine and regenerate the human race will rage for decades. But, the final will be fought here; in our present. Tonight!",
-        "rating": 10,
-        "votesNumber": 11000000,
-        "premiere": false,
-        "runTime": "100",
-        "pg": 18,
-        "genre": "Action",
-        "day": "11-12-2022",
-        "cast": "Woody Long, Ron Jeremy, Angela Summers"
-      },
-      "day": "12-12-2022",
-      "hours": [
-        {
-          "time": "12:00",
-          "roomId": "sala3",
-          "showingId": "12-12-22-12-00-akwarium-penetratore-2"
-        }
-      ],
-      "id": 16
-    },
-    {
-      "movie": {
-        "id": "arcane-league-of-legends",
-        "title": "Arcane",
-        "image": "https://m.media-amazon.com/images/M/MV5BYmU5OWM5ZTAtNjUzOC00NmUyLTgyOWMtMjlkNjdlMDAzMzU1XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_FMjpg_UX1000_.jpg",
-        "descriptionShort": "Set in Utopian Piltover and the oppressed underground of Zaun, the story follows the origins of two iconic League Of Legends champions and the power that will tear them apart.",
-        "rating": 9,
-        "votesNumber": 911,
-        "premiere": false,
-        "runTime": 181,
-        "pg": 13,
-        "genre": "TV Series"
-      },
-      "day": "10-12-2022",
-      "hours": [
-        {
-          "time": "15:00",
-          "roomId": "sala1",
-          "showingId": "10-12-22-15-00-niagara-arcane-league-of-legends"
-        }
-      ],
-      "id": 17
-    },
-    {
-      "movie": {
-        "id": "top-gun-maverick",
-        "title": "Top Gun: Maverick",
-        "image": "https://m.media-amazon.com/images/M/MV5BZWYzOGEwNTgtNWU3NS00ZTQ0LWJkODUtMmVhMjIwMjA1ZmQwXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_FMjpg_UX1000_.jpg",
-        "descriptionShort": "After thirty years, Maverick is still pushing the envelope as a top naval aviator, but must confront ghosts of his past when he leads TOP GUN's elite graduates on a mission that demands the ultimate sacrifice from those chosen to fly it",
-        "rating": 8,
-        "votesNumber": 511,
-        "premiere": false,
-        "runTime": 130,
-        "pg": 16,
-        "genre": "Action"
-      },
-      "day": "10-12-2022",
-      "hours": [
-        {
-          "time": "7:00",
-          "roomId": "sala2",
-          "showingId": "10-12-22-7-00-zanzibar-top-gun-maverick"
-        }
-      ],
-      "id": 18
-    },
-    {
-      "movie": {
-        "id": "top-gun-maverick",
-        "title": "Top Gun: Maverick",
-        "image": "https://m.media-amazon.com/images/M/MV5BZWYzOGEwNTgtNWU3NS00ZTQ0LWJkODUtMmVhMjIwMjA1ZmQwXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_FMjpg_UX1000_.jpg",
-        "descriptionShort": "After thirty years, Maverick is still pushing the envelope as a top naval aviator, but must confront ghosts of his past when he leads TOP GUN's elite graduates on a mission that demands the ultimate sacrifice from those chosen to fly it",
-        "rating": 8,
-        "votesNumber": 511,
-        "premiere": false,
-        "runTime": 130,
-        "pg": 16,
-        "genre": "Action"
-      },
-      "day": "10-12-2022",
-      "hours": [
-        {
-          "time": "10:00",
-          "roomId": "sala2",
-          "showingId": "10-12-22-10-00-zanzibar-top-gun-maverick"
-        }
-      ],
-      "id": 19
     }
   ],
   "showings": [
@@ -815,7 +650,7 @@
       "id": "06-12-22-20-00-niagara-avengers-endgame",
       "roomId": "sala1",
       "movieId": "avengers-endgame",
-      "time": "12:00",
+      "time": "20:00",
       "day": "06-12-2022",
       "soldSeats": []
     },
@@ -973,7 +808,7 @@
       "soldSeats": []
     },
     {
-      "id": "07-12-22-20-00-zanzibar-top-gun-maverick",
+      "id": "07-12-22-20-00-niagara-top-gun-maverick",
       "roomId": "sala1",
       "movieId": "top-gun-maverick",
       "time": "20:00",
@@ -981,10 +816,10 @@
       "soldSeats": []
     },
     {
-      "id": "07-12-22-20-00-niagara-avengers-endgame",
-      "roomId": "sala1",
-      "movieId": "top-gun-maverick",
-      "time": "20:00",
+      "id": "07-12-22-15-00-zanzibar-avengers-endgame",
+      "roomId": "sala2",
+      "movieId": "avengers-endgame",
+      "time": "15:00",
       "day": "07-12-2022",
       "soldSeats": []
     },
@@ -1013,8 +848,24 @@
       "soldSeats": []
     },
     {
+      "id": "07-12-22-17-00-akwarium-avengers-endgame",
+      "roomId": "sala3",
+      "movieId": "avengers-endgame",
+      "time": "17:00",
+      "day": "07-12-2022",
+      "soldSeats": []
+    },
+    {
       "id": "07-12-22-20-00-akwarium-spider-man-into-the-spider-verse",
       "roomId": "sala3",
+      "movieId": "spider-man-into-the-spider-verse",
+      "time": "20:00",
+      "day": "07-12-2022",
+      "soldSeats": []
+    },
+    {
+      "id": "07-12-22-20-00-niagara-avengers-endgame",
+      "roomId": "sala1",
       "movieId": "spider-man-into-the-spider-verse",
       "time": "20:00",
       "day": "07-12-2022",
@@ -1029,6 +880,14 @@
       "soldSeats": []
     },
     {
+      "id": "08-12-22-15-00-zanzibar-avengers-endgame",
+      "roomId": "sala2",
+      "movieId": "avengers-endgame",
+      "time": "15:00",
+      "day": "08-12-2022",
+      "soldSeats": []
+    },
+    {
       "id": "08-12-22-17-00-niagara-top-gun-maverick",
       "roomId": "sala1",
       "movieId": "top-gun-maverick",
@@ -1038,15 +897,7 @@
     },
     {
       "id": "08-12-22-20-00-zanzibar-top-gun-maverick",
-      "roomId": "sala1",
-      "movieId": "top-gun-maverick",
-      "time": "20:00",
-      "day": "08-12-2022",
-      "soldSeats": []
-    },
-    {
-      "id": "08-12-22-20-00-niagara-avengers-endgame",
-      "roomId": "sala1",
+      "roomId": "sala2",
       "movieId": "top-gun-maverick",
       "time": "20:00",
       "day": "08-12-2022",
@@ -1077,9 +928,17 @@
       "soldSeats": []
     },
     {
-      "id": "08-12-22-20-00-akwarium-spider-man-into-the-spider-verse",
+      "id": "08-12-22-17-00-akwarium-avengers-endgame",
       "roomId": "sala3",
-      "movieId": "spider-man-into-the-spider-verse",
+      "movieId": "avengers-endgame",
+      "time": "17:00",
+      "day": "08-12-2022",
+      "soldSeats": []
+    },
+    {
+      "id": "08-12-22-20-00-niagara-avengers-endgame",
+      "roomId": "sala1",
+      "movieId": "avengers-endgame",
       "time": "20:00",
       "day": "08-12-2022",
       "soldSeats": []
@@ -1090,6 +949,30 @@
       "movieId": "spider-man-into-the-spider-verse",
       "time": "20:00",
       "day": "08-12-2022",
+      "soldSeats": []
+    },
+    {
+      "id": "09-12-22-15-00-niagara-avengers-endgame",
+      "roomId": "sala1",
+      "movieId": "avengers-endgame",
+      "time": "15:00",
+      "day": "09-12-2022",
+      "soldSeats": []
+    },
+    {
+      "id": "09-12-22-17-00-niagara-avengers-endgame",
+      "roomId": "sala1",
+      "movieId": "avengers-endgame",
+      "time": "17:00",
+      "day": "09-12-2022",
+      "soldSeats": []
+    },
+    {
+      "id": "09-12-22-20-00-niagara-avengers-endgame",
+      "roomId": "sala1",
+      "movieId": "avengers-endgame",
+      "time": "20:00",
+      "day": "09-12-2022",
       "soldSeats": []
     },
     {
@@ -1119,13 +1002,13 @@
     {
       "id": "12-12-22-15-00-niagara-avengers-endgame",
       "roomId": "sala1",
-      "movieId": "arcane-league-of-legends",
+      "movieId": "avengers-endgame",
       "time": "15:00",
       "day": "12-12-2022",
       "soldSeats": []
     },
     {
-      "id": "12-12-22-17-00-zanzibar-avengers-endgame",
+      "id": "12-12-22-17-00-arcane-league-of-legends",
       "roomId": "sala2",
       "movieId": "arcane-league-of-legends",
       "time": "17:00",
@@ -1138,38 +1021,6 @@
       "movieId": "arcane-league-of-legends",
       "time": "20:00",
       "day": "12-12-2022",
-      "soldSeats": []
-    },
-    {
-      "id": "12-12-22-10-00-akwarium-penetratore-2",
-      "roomId": "sala3",
-      "movieId": "penetratore-2",
-      "time": "10:00",
-      "day": "12-12-2022",
-      "soldSeats": []
-    },
-    {
-      "id": "12-12-22-12-00-akwarium-penetratore-2",
-      "roomId": "sala3",
-      "movieId": "penetratore-2",
-      "time": "12:00",
-      "day": "12-12-2022",
-      "soldSeats": []
-    },
-    {
-      "id": "10-12-22-7-00-zanzibar-top-gun-maverick",
-      "roomId": "sala2",
-      "movieId": "top-gun-maverick",
-      "time": "7:00",
-      "day": "10-12-2022",
-      "soldSeats": []
-    },
-    {
-      "id": "10-12-22-10-00-zanzibar-top-gun-maverick",
-      "roomId": "sala2",
-      "movieId": "top-gun-maverick",
-      "time": "10:00",
-      "day": "10-12-2022",
       "soldSeats": []
     }
   ],
@@ -1215,6 +1066,13 @@
       "column": 12,
       "user": "admin@alekino.com",
       "id": 6
+    },
+    {
+      "showingId": "10-12-22-15-00-niagara-arcane-league-of-legends",
+      "row": "D",
+      "column": 8,
+      "user": "admin@alekino.com",
+      "id": 7
     }
   ],
   "cinemaRooms": {

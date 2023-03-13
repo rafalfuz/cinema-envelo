@@ -1,63 +1,84 @@
 <div *ngIf="selected$ | async as record" class="wrapper">
   <ng-container *ngIf="record.length; else empty">
     <div class="selected-movie">
-      <div
-        class="photo-wrapper"
-        [ngStyle]="{ 'background-image': 'url(' + record[0].movie.image + ')' }"
-      ></div>
+      <div><img src="{{ record[0].movie.image }}" class="image" /></div>
       <div class="movie-details">
         <p class="title">{{ record[0].movie.title }}</p>
         <p class="description">{{ record[0].movie.descriptionShort }}</p>
-        <p class="genre">{{ record[0].movie.genre }}</p>
-        <p class="duration">{{ record[0].movie.runTime }}</p>
-        <p class="pg">{{ record[0].movie.pg }}</p>
+        <div class="attributes">
+          <p class="genre">Kategoria: {{ record[0].movie.genre }}</p>
+          <p class="duration">
+            Czas trwania: {{ record[0].movie.runTime }} minut
+          </p>
+          <p class="pg">Kategoria wiekowa: {{ record[0].movie.pg }} lat</p>
+        </div>
       </div>
     </div>
 
     <h2>Lista seansow</h2>
 
-    <div *ngFor="let record of record">
-      <p>{{ record.day }}</p>
-      <ol>
-        <li *ngFor="let hour of record.hours">
+    <div *ngFor="let item of record">
+      <ol class="records-list">
+        <li *ngFor="let hour of item.hours" class="record-item">
+          <p>{{ item.day }}</p>
           <p>{{ hour.time }}</p>
           <p>{{ hour.roomId }}</p>
         </li>
       </ol>
     </div>
-    <form
-      [formGroup]="formToAddToRepertuare"
-      (ngSubmit)="sendFormToRepertuar(record)"
-    >
-      <mat-form-field
-        class="orderer-name-input orderer-name-input-name"
-        appearance="outline"
+    <div class="add-repertuare-form">
+      <h1>Dodaj film do repertuaru</h1>
+      <form
+        [formGroup]="formToAddToRepertuare"
+        (ngSubmit)="sendFormToRepertuar(record)"
       >
-        <mat-label>Wybierz dzień</mat-label>
-        <input matInput placeholder="Dzień" formControlName="dayOfScreening" />
-      </mat-form-field>
+        <mat-form-field class="movie-selector" appearance="outline">
+          <mat-label>Wybierz dzień</mat-label>
+          <input
+            matInput
+            placeholder="Dzień"
+            formControlName="dayOfScreening"
+          />
+          <mat-error *ngIf="getWrongFormatTime('dayOfScreening') as message">{{
+            message
+          }}</mat-error>
+        </mat-form-field>
 
-      <mat-form-field
-        class="orderer-name-input orderer-name-input-name"
-        appearance="outline"
-      >
-        <mat-label>Wybierz godzinę rozpoczęcia</mat-label>
-        <input
-          matInput
-          placeholder="Godzina rozpoczącia"
-          formControlName="startTime"
-        />
-      </mat-form-field>
-      <mat-select formControlName="room">
-        <mat-option *ngFor="let room of rooms$ | async" [value]="room">
-          {{ room.name }}
-        </mat-option>
-      </mat-select>
-      <button>Wyslij!</button>
-    </form>
+        <mat-form-field class="movie-selector" appearance="outline">
+          <mat-label>Wpisz godzinę rozpoczęcia np. 10:00</mat-label>
+          <input
+            matInput
+            placeholder="Godzina rozpoczącia"
+            formControlName="startTime"
+          />
+          <mat-error *ngIf="getWrongFormatTime('startTime') as message">{{
+            message
+          }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="movie-selector">
+          <mat-label>Wybierz salę</mat-label>
+          <mat-select formControlName="room">
+            <mat-option *ngFor="let room of rooms$ | async" [value]="room">
+              {{ room.id }}
+            </mat-option>
+            <mat-error *ngIf="getWrongFormatTime('room') as message">{{
+              message
+            }}</mat-error>
+          </mat-select>
+        </mat-form-field>
+        <button
+          mat-raised-button
+          class="submitBtn"
+          [disabled]="!formToAddToRepertuare.valid"
+        >
+          Dodaj do repertuaru!
+        </button>
+      </form>
+    </div>
   </ng-container>
   <ng-template #empty>
-    <h1>
+    <h1 class="admin-info">
       Jako admin mozesz dodać film do bazy danych, wypełniając formularz. Możesz
       również dodać film do repertuaru wybierajać go z listy filmów
     </h1>

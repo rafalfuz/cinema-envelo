@@ -1,0 +1,39 @@
+.wrapper {
+  height: 80vh;
+  width: 50vw;
+  color: black;
+}
+
+h1 {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  width: 500px;
+}
+
+.description {
+  width: 500px;
+  max-width: 500px;
+  height: 200px;
+  max-height: 500px;
+}
+
+.submitBtn {
+  width: 300px;
+  height: 50px;
+  font-size: 22px;
+  margin: 50px auto;
+}
+
+.premiere {
+  align-self: center;
+}

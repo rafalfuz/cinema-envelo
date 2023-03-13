@@ -1,0 +1,36 @@
+.admin-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 75%;
+  margin: 40px auto;
+  border-radius: 5px;
+}
+
+.add-new-movie {
+  position: fixed;
+  bottom: 55px;
+  left: 20px;
+  width: 120px;
+  height: 120px;
+  padding: 10px;
+  font-size: 22px;
+  color: black;
+  opacity: 0.4;
+  border: 5px solid black;
+  background-color: white;
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+}
+.add-new-movie:hover {
+  opacity: 1;
+  transition: all ease 0.3;
+}
+.movie-selector {
+  width: 400px;
+  margin: 20px;
+}

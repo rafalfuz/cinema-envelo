@@ -30,13 +30,16 @@ import { SelectedMovieDisplayComponent } from './selected-movie-display/selected
   ],
   selector: 'app-admin-view',
   templateUrl: './admin-view.component.html',
+  styleUrls: ['admin-view.component.css'],
 })
 export class AdminViewComponent {
   public dialog = inject(MatDialog);
   private store = inject(Store);
+
   movies$ = this.store.select(selectMovies);
   repertuare$ = this.store.select(selectRepertuareRecord);
   rooms$ = this.store.select(selectRooms);
+
   openDialog() {
     this.dialog.open(AddMovieFormComponent);
   }

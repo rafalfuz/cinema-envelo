@@ -2,15 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { create } from 'domain';
 import { ToastrService } from 'ngx-toastr';
-import {
-  catchError,
-  combineLatest,
-  map,
-  mergeMap,
-  of,
-  startWith,
-  switchMap,
-} from 'rxjs';
+import { catchError, combineLatest, map, mergeMap, of, switchMap } from 'rxjs';
 import { Reperoire } from 'src/app/movies/movies.interface';
 import { ShowingDatas, ShowingRecord } from 'src/app/order/order.interface';
 import { MovieService } from './admin-movie.service';
@@ -28,7 +20,9 @@ export class AdminEffects {
       switchMap(() => this.adminService.fetchMovies()),
       map((data) => MovieApiActions.getMoviesSuccess({ MovieData: data })),
       catchError(() => {
-        this.toast.error('Najs error');
+        this.toast.error(
+          'Wystapił blad podczas pobierania filmow z bazy danych'
+        );
         return of(MovieApiActions.getMoviesFailure());
       })
     );
@@ -36,7 +30,7 @@ export class AdminEffects {
 
   addMovie$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(MovieActions.addMovie), /// najpierw wybiera sie akcje
+      ofType(MovieActions.addMovie),
       switchMap(({ movies }) => {
         const objectX = {
           movie: movies,
@@ -48,14 +42,12 @@ export class AdminEffects {
           this.adminService.addMovie(movies),
           this.adminService.addToReperoireRecord(objectX),
         ]);
-      }), /// krok po kroku co akcje maja zrobic, w tym przypadku strzal do bazy i przekaznaie props
+      }),
       map(([movie]) => {
-        /// w mapie mozna robic rozne czary, dodawac zmienne itd, robic filetry itd
-        this.toast.success('Film zosatał dodany do bazy'); ///obsluga na sukces
+        this.toast.success('Film zosatał dodany do bazy');
         return MovieApiActions.addMoviesSuccess({ movie });
       }),
       catchError(() => {
-        /// obsluga bledow
         this.toast.error('Nie udalo sie dodac filmu');
         return of(MovieApiActions.getMoviesFailure());
       })
@@ -76,7 +68,7 @@ export class AdminEffects {
             });
           }),
           catchError(() => {
-            this.toast.error('Nie udało się pobrać repertuaru1');
+            this.toast.error('Nie udało się pobrać repertuaru');
             return of(MovieApiActions.getRepertuareFailure());
           })
         );
