@@ -14,6 +14,7 @@ export const MovieActions = createActionGroup({
       movie: Reperoire;
       wizardFormRecord: WizardFormRecord;
     }>(),
+    'get week': emptyProps(),
   },
 });
 
@@ -34,5 +35,8 @@ export const MovieApiActions = createActionGroup({
 
     'add wizard record success': props<{ newRepertuareRecord: Reperoire }>(),
     'add wizard record failure': emptyProps(),
+
+    'get week success': props<{ Week: [string] }>(),
+    'get week failure': emptyProps(),
   },
 });

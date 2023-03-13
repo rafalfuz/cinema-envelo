@@ -38,4 +38,8 @@ export class MovieService {
   addToReperoireRecord(reperoireRecord: Partial<Reperoire>) {
     return this.http.post<Reperoire>(`${this.url}/reperoire`, reperoireRecord);
   }
+
+  fetchDays() {
+    return this.http.get<[string]>(`${this.url}/week`);
+  }
 }

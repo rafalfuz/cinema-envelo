@@ -18,3 +18,8 @@ export const selectRooms = createSelector(
   selectMoviesState,
   (state) => state.rooms
 );
+
+export const selectDay = createSelector(
+  selectMoviesState,
+  (state) => state.week
+);

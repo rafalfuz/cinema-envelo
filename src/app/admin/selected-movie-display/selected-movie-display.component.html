@@ -34,14 +34,11 @@
       >
         <mat-form-field class="movie-selector" appearance="outline">
           <mat-label>Wybierz dzień</mat-label>
-          <input
-            matInput
-            placeholder="Dzień"
-            formControlName="dayOfScreening"
-          />
-          <mat-error *ngIf="getWrongFormatTime('dayOfScreening') as message">{{
-            message
-          }}</mat-error>
+          <mat-select formControlName="dayOfScreening">
+            <mat-option *ngFor="let day of week$ | async" [value]="day">
+              {{ day | dateFormat }}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
 
         <mat-form-field class="movie-selector" appearance="outline">

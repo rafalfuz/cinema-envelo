@@ -33,5 +33,10 @@ export const MovieReducer = createReducer(
 
       return { ...state, repertuare: createNewArr };
     }
-  )
+  ),
+
+  on(MovieApiActions.getWeekSuccess, (state, { Week }) => ({
+    ...state,
+    week: Week,
+  }))
 );

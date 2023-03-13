@@ -14,6 +14,7 @@ import { Store } from '@ngrx/store';
 import { Observable, take } from 'rxjs';
 import { Movies, Reperoire } from 'src/app/movies/movies.interface';
 import { Room } from 'src/app/order/order.interface';
+import { DateFormatPipe } from 'src/app/shared/pipes/data-format.pipe';
 import { timeFormatValidator } from 'src/app/shared/validators/time.validator';
 import { Record } from '../admin.interface';
 import { MovieActions } from '../store/admin.actions';
@@ -34,11 +35,13 @@ import { MovieActions } from '../store/admin.actions';
     NgStyle,
     MatSelectModule,
     MatButtonModule,
+    DateFormatPipe,
   ],
 })
 export class SelectedMovieDisplayComponent {
   @Input() selected$!: Observable<Reperoire[]>;
   @Input() rooms$!: Observable<Room[]>;
+  @Input() week$!: Observable<[string]>;
   private formBuilder = inject(NonNullableFormBuilder);
   formToAddToRepertuare = this.formToAddMovieGroup();
   private store = inject(Store);
@@ -71,6 +74,10 @@ export class SelectedMovieDisplayComponent {
         wizardFormRecord: this.formToAddToRepertuare.getRawValue(),
       })
     );
+  }
+
+  selectedDay(value: string) {
+    ////
   }
 
   getWrongFormatTime(formControlName: 'startTime' | 'dayOfScreening' | 'room') {

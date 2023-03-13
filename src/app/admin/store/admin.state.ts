@@ -5,9 +5,11 @@ export interface MovieState {
   repertuare: Reperoire[];
   movies: Movies[];
   rooms: Room[];
+  week: [string];
 }
 export const initialMovieState: MovieState = {
   repertuare: [],
   movies: [],
   rooms: [],
+  week: [''],
 };

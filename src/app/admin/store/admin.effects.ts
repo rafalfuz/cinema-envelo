@@ -147,4 +147,16 @@ export class AdminEffects {
       })
     );
   });
+
+  getWeek$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(MovieActions.getWeek),
+      switchMap((data) => this.adminService.fetchDays()),
+      map((data) => MovieApiActions.getWeekSuccess({ Week: data })),
+      catchError(() => {
+        this.toast.error('Nie mozna pobrac danych z tablicy week');
+        return of(MovieApiActions.getWeekFailure());
+      })
+    );
+  });
 }

@@ -7,6 +7,7 @@ import { AddMovieFormComponent } from './add-movie-form/add-movie-form.component
 import { MatSelectModule } from '@angular/material/select';
 import { Store } from '@ngrx/store';
 import {
+  selectDay,
   selectMovies,
   selectRepertuareRecord,
   selectRooms,
@@ -39,6 +40,7 @@ export class AdminViewComponent {
   movies$ = this.store.select(selectMovies);
   repertuare$ = this.store.select(selectRepertuareRecord);
   rooms$ = this.store.select(selectRooms);
+  week$ = this.store.select(selectDay);
 
   openDialog() {
     this.dialog.open(AddMovieFormComponent);
@@ -47,6 +49,8 @@ export class AdminViewComponent {
   ngOnInit() {
     this.store.dispatch(MovieActions.getMovies());
     this.store.dispatch(MovieActions.getRooms());
+    this.store.dispatch(MovieActions.getWeek());
+    console.log(this.week$.subscribe((data) => console.log('init', data)));
   }
 
   selectedMovie(id: string) {
